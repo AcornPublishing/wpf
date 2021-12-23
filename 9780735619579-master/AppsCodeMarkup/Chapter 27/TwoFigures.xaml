@@ -1,0 +1,41 @@
+<!-- =============================================
+      TwoFigures.xaml (c) 2006 by Charles Petzold
+     ============================================= -->
+<Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        TextBlock.FontSize="16">
+    <Canvas.Resources>
+
+        <!-- Define properties common to both figures. -->
+
+        <Style x:Key="figure">
+            <Setter Property="Polygon.Points"
+                    Value="0 48, 0 144, 96 144, 96 0, 192 0, 192 96, 
+                           48 96, 48 192, 144 192 144 48" />
+            <Setter Property="Polygon.Fill"
+                    Value="Blue" />
+            <Setter Property="Polygon.Stroke"
+                    Value="Red" />
+            <Setter Property="Polygon.StrokeThickness"
+                    Value="3" />
+        </Style>
+    </Canvas.Resources>
+
+    <!-- Draw first figure with "EvenOdd" FillRule. -->
+
+    <TextBlock Canvas.Left="48" Canvas.Top="24"
+               Text="FillRule = EvenOdd" />
+
+    <Polygon Style="{StaticResource figure}"
+             FillRule="EvenOdd"
+             Canvas.Left="48" Canvas.Top="72" />
+
+    <!-- Draw second figure with "NonZero" FillRule. -->
+
+    <TextBlock Canvas.Left="288" Canvas.Top="24"
+               Text="FillRule = NonZero" />
+
+    <Polygon Style="{StaticResource figure}"
+             FillRule="NonZero"
+             Canvas.Left="288" Canvas.Top="72" />
+</Canvas>

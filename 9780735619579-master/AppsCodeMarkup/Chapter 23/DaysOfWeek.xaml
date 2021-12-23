@@ -1,0 +1,23 @@
+<!-- =============================================
+      DaysOfWeek.xaml (c) 2006 by Charles Petzold
+     ============================================= -->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:g="clr-namespace:System.Globalization;assembly=mscorlib">
+
+    <!-- Bind ListBox ItemsSource to DayNames property of DateTimeFormatInfo. -->
+
+    <ListBox Name="lstbox"
+             HorizontalAlignment="Center"
+             Margin="24"
+             ItemsSource="{Binding 
+                            Source={x:Static g:DateTimeFormatInfo.CurrentInfo},
+                            Path=DayNames,
+                            Mode=OneTime}" />
+
+    <!-- Bind TextBlock Text to SelectedItem property of ListBox. -->
+
+    <TextBlock HorizontalAlignment="Center"
+               Text="{Binding ElementName=lstbox, 
+                                    Path=SelectedItem, Mode=OneWay}" />
+</StackPanel>

@@ -1,0 +1,26 @@
+<!-- ==============================================================
+      ImageDisplaysVectorGraphics.xaml (c) 2006 by Charles Petzold
+     ============================================================== -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Image Stretch="None">
+        <Image.Source>
+            <DrawingImage>
+                <DrawingImage.Drawing>
+                    <GeometryDrawing Brush="Blue">
+
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="Red" Thickness="5" />
+                        </GeometryDrawing.Pen>
+
+                        <GeometryDrawing.Geometry>
+                            <EllipseGeometry Center="0 0" RadiusX="50" 
+                                                          RadiusY="50" />
+                        </GeometryDrawing.Geometry>
+
+                    </GeometryDrawing>
+                </DrawingImage.Drawing>
+            </DrawingImage>
+        </Image.Source>
+    </Image>
+</Page>

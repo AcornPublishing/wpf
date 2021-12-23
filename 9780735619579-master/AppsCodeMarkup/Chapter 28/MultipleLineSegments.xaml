@@ -1,0 +1,19 @@
+<!-- =======================================================
+      MultipleLineSegments.xaml (c) 2006 by Charles Petzold 
+     ======================================================= -->
+<Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Path Fill="Aqua" Stroke="Maroon" StrokeThickness="3">
+        <Path.Data>
+            <PathGeometry>
+                <PathFigure StartPoint="144 72">
+                    <LineSegment Point="200 246" />
+                    <LineSegment Point="53 138" />
+                    <LineSegment Point="235 138" />
+                    <LineSegment Point="88 246" />
+                </PathFigure>
+            </PathGeometry>
+        </Path.Data>
+    </Path>
+</Canvas>

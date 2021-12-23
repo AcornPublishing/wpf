@@ -1,0 +1,49 @@
+<!--  ====================================================================
+       RenderTransformAndLayoutTransform.xaml (c) 2006 by Charles Petzold
+      ==================================================================== -->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            TextBlock.FontSize="18pt" >
+    
+    <!-- RenderTransform section. -->
+
+    <TextBlock Margin="24">
+        RenderTransform
+    </TextBlock>
+    <UniformGrid Rows="3" Columns="3">
+        <Button Content="Button" />
+        <Button Content="Button" />
+        <Button Content="Button" />
+        <Button Content="Button" />
+        <Button Content="Button">
+            <Button.RenderTransform>
+                <RotateTransform Angle="45" />
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="Button" />
+        <Button Content="Button" />
+        <Button Content="Button" />
+        <Button Content="Button" />
+    </UniformGrid>
+    
+    <!-- LayoutTransform section. -->
+
+    <TextBlock Margin="24">
+        LayoutTransform
+    </TextBlock>
+    <UniformGrid Rows="3" Columns="3">
+        <Button Content="Button" />
+        <Button Content="Button" />
+        <Button Content="Button" />
+        <Button Content="Button" />
+        <Button Content="Button" >
+            <Button.LayoutTransform>
+                <RotateTransform Angle="45" />
+            </Button.LayoutTransform>
+        </Button>
+        <Button Content="Button" />
+        <Button Content="Button" />
+        <Button Content="Button" />
+        <Button Content="Button" />
+    </UniformGrid>
+</StackPanel>

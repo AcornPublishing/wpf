@@ -1,0 +1,45 @@
+<!-- =======================================================
+      EnlargeButtonsInXaml.xaml (c) 2006 by Charles Petzold 
+     ======================================================= -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+
+        <Button Name="btn1" FontSize="12" Margin="12" 
+                HorizontalAlignment="Center">
+            Expand Other Button
+        </Button>
+
+        <Button Name="btn2" FontSize="12" Margin="12" 
+                HorizontalAlignment="Center">
+            Expand Other Button
+        </Button>
+    </StackPanel>
+
+    <Page.Triggers>
+        <EventTrigger SourceName="btn1" RoutedEvent="Button.Click">
+            <BeginStoryboard>
+                <Storyboard> 
+                    <DoubleAnimation Storyboard.TargetName="btn2"
+                                     Storyboard.TargetProperty="FontSize"
+                                     From="12" To="48" 
+                                     Duration="0:0:2"
+                                     FillBehavior="Stop" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+
+        <EventTrigger SourceName="btn2" RoutedEvent="Button.Click">
+            <BeginStoryboard>
+                <Storyboard> 
+                    <DoubleAnimation Storyboard.TargetName="btn1"
+                                     Storyboard.TargetProperty="FontSize"
+                                     From="12" To="48" 
+                                     Duration="0:0:2"
+                                     FillBehavior="Stop" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Page.Triggers>
+</Page>

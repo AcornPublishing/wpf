@@ -1,0 +1,28 @@
+<!-- ===========================================
+      Dumbbell.xaml (c) 2006 by Charles Petzold 
+     =========================================== -->
+<Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Path Fill="DarkGray" Stroke="Black" StrokeThickness="5">
+        <Path.Data>
+            <CombinedGeometry GeometryCombineMode="Union">
+                <CombinedGeometry.Geometry1>
+                    <CombinedGeometry GeometryCombineMode="Union">
+                        <CombinedGeometry.Geometry1>
+                            <EllipseGeometry Center="100 100"
+                                             RadiusX="50" RadiusY="50" />
+                        </CombinedGeometry.Geometry1>
+                        <CombinedGeometry.Geometry2>
+                            <RectangleGeometry Rect="100 75 200 50" />
+                        </CombinedGeometry.Geometry2>
+                    </CombinedGeometry>
+                </CombinedGeometry.Geometry1>
+                <CombinedGeometry.Geometry2>
+                    <EllipseGeometry Center="300 100"
+                                     RadiusX="50" RadiusY="50" />
+                </CombinedGeometry.Geometry2>
+            </CombinedGeometry>
+        </Path.Data>
+    </Path>
+</Canvas>

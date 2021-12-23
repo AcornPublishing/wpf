@@ -1,0 +1,38 @@
+<!-- =====================================================
+      TransformedButtons.xaml (c) 2006 by Charles Petzold
+     ===================================================== -->
+<Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Button Canvas.Left="50" Canvas.Top="100">
+        Untransformed
+    </Button>
+
+    <Button Canvas.Left="200" Canvas.Top="100">
+        Translated
+        <Button.RenderTransform>
+            <TranslateTransform X="-100" Y="150" />
+        </Button.RenderTransform>
+    </Button>
+
+    <Button Canvas.Left="350" Canvas.Top="100">
+        Scaled
+        <Button.RenderTransform>
+            <ScaleTransform ScaleX="1.5" ScaleY="4" />
+        </Button.RenderTransform>
+    </Button>
+
+    <Button Canvas.Left="500" Canvas.Top="100">
+        Skewed
+        <Button.RenderTransform>
+            <SkewTransform AngleY="20" />
+        </Button.RenderTransform>
+    </Button>
+
+    <Button Canvas.Left="650" Canvas.Top="100">
+        Rotated
+        <Button.RenderTransform>
+            <RotateTransform Angle="-30" />
+        </Button.RenderTransform>
+    </Button>
+</Canvas>

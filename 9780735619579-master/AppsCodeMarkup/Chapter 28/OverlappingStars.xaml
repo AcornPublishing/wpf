@@ -1,0 +1,19 @@
+<!-- ===================================================
+      OverlappingStars.xaml (c) 2006 by Charles Petzold 
+     =================================================== -->
+<Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Path Fill="Aqua" Stroke="Maroon" StrokeThickness="3">
+        <Path.Data>
+            <PathGeometry>
+                <PathFigure StartPoint="144 72" IsClosed="True">
+                    <PolyLineSegment Points="200 246, 53 138, 235 138, 88 246" />
+                </PathFigure>
+                <PathFigure StartPoint="168 96" IsClosed="True">
+                    <PolyLineSegment Points="224 260, 77 162, 259 162, 112 270" />
+                </PathFigure>
+            </PathGeometry>
+        </Path.Data>
+    </Path>
+</Canvas>

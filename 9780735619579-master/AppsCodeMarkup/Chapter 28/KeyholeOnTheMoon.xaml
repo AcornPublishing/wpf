@@ -1,0 +1,10 @@
+<!-- ===================================================
+      KeyholeOnTheMoon.xaml (c) 2006 by Charles Petzold 
+     =================================================== -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Image Source="http://images.jsc.nasa.gov/lores/AS11-40-5903.jpg"
+           Clip="M 300 130 L 250 350 L 450 350 L 400 130 A 70 70 0 1 0 300 130"
+           Stretch="None" />
+</Page>

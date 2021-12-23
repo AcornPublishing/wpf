@@ -1,0 +1,36 @@
+<!-- =====================================================
+      RectangularOpacity.xaml (c) 2006 by Charles Petzold 
+     ===================================================== -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <TextBlock x:Name="txtblk" Text="XAML" 
+               FontSize="144pt" FontFamily="Arial Black"
+               HorizontalAlignment="Center" VerticalAlignment="Center">
+
+        <TextBlock.Triggers>
+            <EventTrigger RoutedEvent="TextBlock.Loaded">
+                <BeginStoryboard>
+                    <Storyboard TargetName="txtblk" 
+                                TargetProperty="Opacity"
+                                RepeatBehavior="Forever">
+                        <DoubleAnimationUsingPath Duration="0:0:4" 
+                                                  Source="Y">
+                            <DoubleAnimationUsingPath.PathGeometry>
+                                <PathGeometry>
+                                    <PathGeometry.Figures>
+                                        <PathFigure StartPoint="0 0">
+                                            <LineSegment Point="0 1" />
+                                            <LineSegment Point="2 1" />
+                                            <LineSegment Point="2 0" />
+                                        </PathFigure>
+                                    </PathGeometry.Figures>
+                                </PathGeometry>
+                            </DoubleAnimationUsingPath.PathGeometry>
+                        </DoubleAnimationUsingPath>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </TextBlock.Triggers>
+    </TextBlock>
+</Page>

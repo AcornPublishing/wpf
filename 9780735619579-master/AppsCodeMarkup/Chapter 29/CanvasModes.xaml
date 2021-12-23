@@ -1,0 +1,84 @@
+<!-- ==============================================
+      CanvasModes.xaml (c) 2006 by Charles Petzold
+     ============================================== -->
+<Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+        <ColumnDefinition />
+    </Grid.ColumnDefinitions>
+
+    <Grid.Resources>
+        <Style TargetType="{x:Type Canvas}">
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Height" Value="100" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+
+        <Style TargetType="{x:Type Path}">
+            <Setter Property="Fill" Value="Red" />
+            <Setter Property="Data">
+                <Setter.Value>
+                    <EllipseGeometry Center="0 0" RadiusX="5" RadiusY="5" />
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </Grid.Resources>
+
+    <!-- Normal: Origin at upper left. -->
+
+    <Canvas Grid.Column="0">
+        <Line X1="0" Y1="0" X2="100" Y2="100" Stroke="Black" />
+        <Polyline Points="0 0 0 100 100 100 100 0 0 0" Stroke="Blue" />
+        <Path />
+    </Canvas>
+
+    <!-- Origin at lower left. Y increases going up. -->
+
+    <Canvas Grid.Column="1">
+        <Canvas.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform ScaleY="-1" />
+                <TranslateTransform Y="100" />
+            </TransformGroup>
+        </Canvas.RenderTransform>
+
+        <Line X1="0" Y1="0" X2="100" Y2="100" Stroke="Black" />
+        <Polyline Points="0 0 0 100 100 100 100 0 0 0" Stroke="Blue" />
+        <Path />
+    </Canvas>
+
+    <!-- Origin in center. Y increases going down. --> 
+
+    <Canvas Grid.Column="2">
+        <Canvas.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform ScaleY="1" />
+                <TranslateTransform X="50" Y="50" />
+            </TransformGroup>
+        </Canvas.RenderTransform>
+
+        <Line X1="0" Y1="0" X2="50" Y2="50" Stroke="Black" />
+        <Polyline Points="-50 -50 50 -50 50 50 -50 50 -50 -50" Stroke="Blue" />
+        <Path />
+    </Canvas>
+
+    <!-- Four-quadrant Cartesian coordinate system. -->
+
+    <Canvas Grid.Column="3">
+        <Canvas.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform ScaleY="-1" />
+                <TranslateTransform X="50" Y="50" />
+            </TransformGroup>
+        </Canvas.RenderTransform>
+
+        <Line X1="0" Y1="0" X2="50" Y2="50" Stroke="Black" />
+        <Polyline Points="-50 -50 50 -50 50 50 -50 50 -50 -50" Stroke="Blue" />
+        <Path />
+    </Canvas>
+</Grid>

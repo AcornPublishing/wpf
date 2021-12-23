@@ -1,0 +1,11 @@
+<!-- ===================================================
+      SimpleImageBrush.xaml (c) 2006 by Charles Petzold
+     =================================================== -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Page.Background>
+        <ImageBrush
+            ImageSource="http://www.charlespetzold.com/PetzoldTattoo.jpg">
+        </ImageBrush>
+    </Page.Background>
+</Page>

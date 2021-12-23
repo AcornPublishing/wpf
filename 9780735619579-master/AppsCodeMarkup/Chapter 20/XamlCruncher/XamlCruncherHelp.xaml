@@ -1,0 +1,76 @@
+<!-- ===================================================
+      XamlCruncherHelp.xaml (c) 2006 by Charles Petzold
+     =================================================== -->
+<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              TextAlignment="Left">
+    <Paragraph TextAlignment="Center" FontSize="32" FontStyle="Italic"
+               LineHeight="24">
+        XAML Cruncher
+    </Paragraph>
+    <Paragraph TextAlignment="Center">
+        &#x00A9; 2006 by Charles Petzold
+    </Paragraph>
+    <Paragraph FontSize="16pt" FontWeight="Bold" LineHeight="16">
+        Introduction
+    </Paragraph>
+    <Paragraph>
+        XAML Cruncher is a sample program from Charles Petzold's book 
+        <Italic>
+            Applications = Code + Markup: 
+            A Guide to the Microsoft Windows Presentation Foundation
+        </Italic>
+        published by Microsoft Press in 2006.
+        XAML Cruncher provides a convenient way to learn about and experiment 
+        with XAML, the Extensible Application Markup Language. 
+    </Paragraph>
+    <Paragraph>
+        XAML Cruncher consists of an Edit section (in which you enter and edit
+        a XAML document) and a Display section that shows the object created
+        from the XAML. If the XAML document has errors, the text is displayed
+        in red and the status bar indicates the problem.
+    </Paragraph>
+    <Paragraph>
+        Most of the interface and functionality of the edit section of 
+        XAML Cruncher is based on Windows Notepad. 
+        The <Bold>Xaml</Bold> menu provides additional features.
+    </Paragraph>
+    <Paragraph FontSize="16pt" FontWeight="Bold" LineHeight="16">
+        Xaml Menu
+    </Paragraph>
+    <Paragraph>
+        The <Bold>Orientation</Bold> menu item lets you choose whether you 
+        want the Edit and Display sections of XAML Cruncher arranged 
+        horizontally or vertically.
+    </Paragraph>
+    <Paragraph>
+        The <Bold>Tab Spaces</Bold> menu item displays a dialog box that lets
+        you choose the number of spaces you want inserted when you press the 
+        Tab key. Changing this item does not change any indentation 
+        already in the current document. 
+   </Paragraph>
+    <Paragraph>
+        There are times when your XAML document will be so complex that it
+        takes a little while to convert it into an object. You may want to 
+        <Bold>Suspend Parsing</Bold> by checking this item on the 
+        <Bold>Xaml</Bold> menu.
+    </Paragraph>
+    <Paragraph>
+        If you've suspended parsing, or if you want to reparse the XAML file,
+        select <Bold>Reparse</Bold> from the menu or press F6.
+    </Paragraph>
+    <Paragraph>
+        If the root element of your XAML is <Italic>Window</Italic>, 
+        XAML Cruncher will not be able to display the <Italic>Window</Italic>
+        object in its own window. 
+        Select the <Bold>Show Window</Bold> menu item or press F7 to view
+        the window.
+    </Paragraph>
+    <Paragraph>
+        When you start up XAML Cruncher (and whenever you select 
+        <Bold>New</Bold> from the <Bold>File</Bold> menu), the Edit window 
+        displays a simple startup document. 
+        If you want to use the current document as the startup document,
+        select the <Bold>Save as Startup Document</Bold> item.
+    </Paragraph>
+</FlowDocument>

@@ -1,0 +1,17 @@
+<!-- =========================================================
+      FourOverlappingCircles.xaml (c) 2006 by Charles Petzold
+     ========================================================= -->
+<Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        
+    <Path Fill="Blue" Stroke="Red" StrokeThickness="3">
+        <Path.Data>
+            <GeometryGroup>
+                <EllipseGeometry Center="150 150" RadiusX="100" RadiusY="100" />
+                <EllipseGeometry Center="250 150" RadiusX="100" RadiusY="100" />
+                <EllipseGeometry Center="150 250" RadiusX="100" RadiusY="100" />
+                <EllipseGeometry Center="250 250" RadiusX="100" RadiusY="100" />
+            </GeometryGroup>
+        </Path.Data>
+    </Path>
+</Canvas>

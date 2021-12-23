@@ -1,0 +1,30 @@
+<!-- ================================================================
+      InteractiveTranslateTransform.xaml (c) 2006 by Charles Petzold 
+     ================================================================ -->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Label Content="X" />
+    <ScrollBar Name="xscroll" Orientation="Horizontal"
+               Minimum="-300" Maximum="1000" />
+    <TextBlock HorizontalAlignment="Center" Margin="12"
+               Text="{Binding ElementName=xscroll, Path=Value}" />
+
+    <Label Content="Y" />
+    <ScrollBar Name="yscroll" Orientation="Horizontal"
+               Minimum="-300" Maximum="1000" />
+    <TextBlock HorizontalAlignment="Center" Margin="12"
+               Text="{Binding ElementName=yscroll, Path=Value}" />
+
+    <Canvas>
+        <Line X1="100" Y1="0" X2="100" Y2="1000" Stroke="Black"/>
+        <Line X1="0" Y1="100" X2="1000" Y2="100" Stroke="Black"/>
+
+        <Button Content="Button" Canvas.Left="100" Canvas.Top="100">
+            <Button.RenderTransform>
+                <TranslateTransform 
+                    X="{Binding ElementName=xscroll, Path=Value}"
+                    Y="{Binding ElementName=yscroll, Path=Value}" />
+            </Button.RenderTransform>
+        </Button>
+    </Canvas>
+</StackPanel>

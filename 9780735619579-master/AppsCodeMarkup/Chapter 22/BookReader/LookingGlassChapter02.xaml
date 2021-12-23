@@ -1,0 +1,33 @@
+<!-- ============================
+      LookingGlassChapter02.xaml
+     ============================ -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      Title="II. The Garden of Live Flowers">
+    <FlowDocumentReader>
+        <FlowDocument>
+            <Paragraph TextAlignment="Center" FontSize="16pt">
+                 Chapter II
+            </Paragraph>
+            <Paragraph TextAlignment="Center" FontSize="16pt">
+                 The Garden of Live Flowers
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                &#x201C;I should see the garden far better,&#x201D;
+                said Alice to herself, &#x201C;if I could get to the
+                top of that hill; and here&#x2019;s a path that leads
+                straight to it&#x2014;at least, it doesn&#x2019;t do 
+                <Italic>that</Italic>&#x2014;&#x201D; (after going
+                a few yards along the path, and turning several sharp
+                corners), &#x201C;but I suppose it will at last. But
+                how curiously it twists! It&#x2019;s more like a 
+                corkscrew than a path! Well, <Italic>this</Italic>
+                turn goes to the hill, I suppose&#x2014;no, it
+                doesn&#x2019;t! This goes straight back to the house!
+                Well then, I&#x2019;ll try it the other way.&#x201D;
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                ...
+            </Paragraph>
+        </FlowDocument>
+    </FlowDocumentReader>
+</Page>

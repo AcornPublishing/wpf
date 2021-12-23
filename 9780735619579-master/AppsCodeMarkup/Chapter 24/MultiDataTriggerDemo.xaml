@@ -1,0 +1,55 @@
+<!-- =======================================================
+      MultiDataTriggerDemo.xaml (c) 2006 by Charles Petzold
+     ======================================================= -->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel.Resources>
+        <Style TargetType="{x:Type CheckBox}">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="12" />
+        </Style>
+
+
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="12" />
+            <Setter Property="IsEnabled" Value="False" />
+
+            <Style.Triggers>
+                <MultiDataTrigger>
+                    <MultiDataTrigger.Conditions>
+                        <Condition Binding="{Binding ElementName=chkbox1, 
+                                             Path=IsChecked}"
+                                   Value="True" />
+                        <Condition Binding="{Binding ElementName=chkbox2, 
+                                             Path=IsChecked}"
+                                   Value="True" />
+                    </MultiDataTrigger.Conditions>
+                    <Setter Property="IsEnabled" Value="True" />
+                </MultiDataTrigger>
+            </Style.Triggers>
+        </Style>
+    </StackPanel.Resources>
+
+    <CheckBox Name="chkbox1">
+        Check 1
+    </CheckBox>
+
+    <CheckBox Name="chkbox2">
+        Check 2
+    </CheckBox>
+
+    <Button>
+        Button Number 1
+    </Button>
+
+    <Button>
+        Button Number 2
+    </Button>
+
+    <Button>
+        Button Number 3
+    </Button>
+
+</StackPanel>

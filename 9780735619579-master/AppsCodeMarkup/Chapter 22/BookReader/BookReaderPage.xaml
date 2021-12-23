@@ -1,0 +1,38 @@
+<!-- =====================
+      BookReaderPage.xaml
+     ===================== -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      WindowTitle="Book Reader">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="90*" />
+        </Grid.RowDefinitions>
+
+        <!-- Frame for list of books. -->
+        <Frame Grid.Row="0" Source="BookList.xaml" />
+
+        <GridSplitter Grid.Row="1" Height="6"
+                      HorizontalAlignment="Stretch" 
+                      VerticalAlignment="Center" />
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="75*" />
+            </Grid.ColumnDefinitions>
+
+            <!-- Frame for table of contents. -->
+            <Frame Grid.Column="0" Name="frameContents" />
+
+            <GridSplitter Grid.Column="1" Width="6"
+                          HorizontalAlignment="Center" 
+                          VerticalAlignment="Stretch" />
+
+            <!-- Frame for the actual text. -->
+            <Frame Grid.Column="2" Name="frameChapter" />
+        </Grid>
+    </Grid>
+</Page>

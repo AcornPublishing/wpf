@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPerson xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Person>
+    <FirstName>Franz</FirstName>
+    <MiddleName />
+    <LastName>Schubert</LastName>
+    <BirthDate>1797-01-07</BirthDate>
+    <DeathDate>1828-11-19</DeathDate>
+  </Person>
+  <Person>
+    <FirstName>Johannes</FirstName>
+    <MiddleName />
+    <LastName>Brahms</LastName>
+    <BirthDate>1833-05-07</BirthDate>
+    <DeathDate>1897-04-03</DeathDate>
+  </Person>
+  <Person>
+    <FirstName>John</FirstName>
+    <MiddleName />
+    <LastName>Adams</LastName>
+    <BirthDate>1947-02-15</BirthDate>
+    <DeathDate xsi:nil="true" />
+  </Person>
+  <Person>
+    <FirstName>Johann</FirstName>
+    <MiddleName>Sebastian</MiddleName>
+    <LastName>Bach</LastName>
+    <BirthDate>1685-03-21</BirthDate>
+    <DeathDate>1750-07-28</DeathDate>
+  </Person>
+  <Person>
+    <FirstName>Wolfgang</FirstName>
+    <MiddleName>Amadeus</MiddleName>
+    <LastName>Mozart</LastName>
+    <BirthDate>1756-01-27</BirthDate>
+    <DeathDate>1791-12-05</DeathDate>
+  </Person>
+  <Person>
+    <FirstName>Ludwig</FirstName>
+    <MiddleName>van</MiddleName>
+    <LastName>Beethoven</LastName>
+    <BirthDate>1770-12-17</BirthDate>
+    <DeathDate>1827-03-26</DeathDate>
+  </Person>
+  <Person>
+    <FirstName>George</FirstName>
+    <MiddleName>Frideric</MiddleName>
+    <LastName>Handel</LastName>
+    <BirthDate>1685-02-23</BirthDate>
+    <DeathDate>1759-04-14</DeathDate>
+  </Person>
+  <Person>
+    <FirstName>Philip</FirstName>
+    <MiddleName />
+    <LastName>Glass</LastName>
+    <BirthDate>1937-01-31</BirthDate>
+    <DeathDate xsi:nil="true" />
+  </Person>
+  <Person>
+    <FirstName>Pierre</FirstName>
+    <MiddleName />
+    <LastName>Boulez</LastName>
+    <BirthDate>1925-03-26</BirthDate>
+    <DeathDate xsi:nil="true" />
+  </Person>
+  <Person>
+    <FirstName>Joseph</FirstName>
+    <MiddleName />
+    <LastName>Haydn</LastName>
+    <BirthDate>1732-04-01</BirthDate>
+    <DeathDate>1809-05-31</DeathDate>
+  </Person>
+  <Person>
+    <FirstName>Igor</FirstName>
+    <MiddleName />
+    <LastName>Stravinsky</LastName>
+    <BirthDate>1882-06-17</BirthDate>
+    <DeathDate>1971-04-06</DeathDate>
+  </Person>
+  <Person>
+    <FirstName>Gustav</FirstName>
+    <MiddleName />
+    <LastName>Mahler</LastName>
+    <BirthDate>1860-07-07</BirthDate>
+    <DeathDate>1911-05-18</DeathDate>
+  </Person>
+  <Person>
+    <FirstName>Claude</FirstName>
+    <MiddleName />
+    <LastName>Debussy</LastName>
+    <BirthDate>1862-08-22</BirthDate>
+    <DeathDate>1918-03-25</DeathDate>
+  </Person>
+  <Person>
+    <FirstName>John</FirstName>
+    <MiddleName />
+    <LastName>Cage</LastName>
+    <BirthDate>1912-09-05</BirthDate>
+    <DeathDate>1992-08-12</DeathDate>
+  </Person>
+  <Person>
+    <FirstName>Bela</FirstName>
+    <MiddleName />
+    <LastName>Bartok</LastName>
+    <BirthDate>1881-03-25</BirthDate>
+    <DeathDate>1945-09-26</DeathDate>
+  </Person>
+  <Person>
+    <FirstName>Hector</FirstName>
+    <MiddleName />
+    <LastName>Berlioz</LastName>
+    <BirthDate>1803-12-11</BirthDate>
+    <DeathDate>1869-03-08</DeathDate>
+  </Person>
+  <Person>
+    <FirstName>Claudio</FirstName>
+    <MiddleName />
+    <LastName>Monteverdi</LastName>
+    <BirthDate>1567-05-15</BirthDate>
+    <DeathDate>1643-11-29</DeathDate>
+  </Person>
+  <Person>
+    <FirstName>Sergei</FirstName>
+    <MiddleName />
+    <LastName>Prokofiev</LastName>
+    <BirthDate>1891-04-27</BirthDate>
+    <DeathDate>1953-03-05</DeathDate>
+  </Person>
+  <Person>
+    <FirstName>Carlo</FirstName>
+    <MiddleName />
+    <LastName>Gesualdo</LastName>
+    <BirthDate>1566-03-08</BirthDate>
+    <DeathDate>1613-09-08</DeathDate>
+  </Person>
+  <Person>
+    <FirstName>Steve</FirstName>
+    <MiddleName />
+    <LastName>Reich</LastName>
+    <BirthDate>1936-10-03</BirthDate>
+    <DeathDate xsi:nil="true" />
+  </Person>
+  <Person>
+    <FirstName>Maurice</FirstName>
+    <MiddleName />
+    <LastName>Ravel</LastName>
+    <BirthDate>1875-03-07</BirthDate>
+    <DeathDate>1937-12-28</DeathDate>
+  </Person>
+  <Person>
+    <FirstName>Charles</FirstName>
+    <MiddleName />
+    <LastName>Ives</LastName>
+    <BirthDate>1874-10-20</BirthDate>
+    <DeathDate>1954-05-19</DeathDate>
+  </Person>
+  <Person>
+    <FirstName>Aaron</FirstName>
+    <MiddleName />
+    <LastName>Copland</LastName>
+    <BirthDate>1900-11-14</BirthDate>
+    <DeathDate>1990-12-02</DeathDate>
+  </Person>
+</ArrayOfPerson>

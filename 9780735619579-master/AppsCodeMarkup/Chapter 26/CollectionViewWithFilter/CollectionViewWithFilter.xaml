@@ -1,0 +1,76 @@
+﻿<!-- ===========================================================
+      CollectionViewWithFilter.xaml (c) 2006 by Charles Petzold
+     =========================================================== -->
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Petzold.CollectionViewWithFilter.CollectionViewWithFilter"
+        Title="CollectionView with Filter"
+        SizeToContent="WidthAndHeight"
+        ResizeMode="CanMinimize">
+    <DockPanel Name="dock">
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_File">
+                <MenuItem Header="_Open..." Command="Open" />
+            </MenuItem>
+        </Menu>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <!-- GroupBox with RadioButtons for filtering. -->
+            <GroupBox Grid.Row="0" Margin="24" HorizontalAlignment="Center"
+                      Header="Criteria">
+                <StackPanel>
+                    <RadioButton Name="radioLiving" Content="Living"
+                                 Checked="RadioOnChecked" Margin="6" />
+                    <RadioButton Name="radioDead" Content="Dead"
+                                 Checked="RadioOnChecked" Margin="6" />
+                    <RadioButton Name="radioAll" Content="All"
+                                 Checked="RadioOnChecked" Margin="6" />
+                </StackPanel>
+            </GroupBox>
+
+            <!-- ListBox to display items. -->
+            <ListBox Name="lstbox" Grid.Row="1" HorizontalAlignment="Center" 
+                     Width="300" Height="300" Margin="24">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding Path=FirstName}" />
+                            <TextBlock Text=" " />
+                            <TextBlock Text="{Binding Path=MiddleName}" />
+                            <TextBlock Text=" " Name="txtblkSpace"/>
+                            <TextBlock Text="{Binding Path=LastName}" />
+                            <TextBlock Text=" (" />
+                            <TextBlock Text="{Binding Path=BirthDate.Year}" />
+                            <TextBlock Text="-" />
+                            <TextBlock Text="{Binding Path=DeathDate.Year}"
+                                       Name="txtblkDeath" />
+                            <TextBlock Text=")" />
+                        </StackPanel>
+                        <DataTemplate.Triggers>
+                            <DataTrigger Binding="{Binding Path=DeathDate}"
+                                         Value="{x:Null}">
+                                <Setter TargetName="txtblkDeath"
+                                        Property="Text" Value="present" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding Path=MiddleName}"
+                                         Value="">
+                                <Setter TargetName="txtblkSpace"
+                                        Property="Text" Value="" />
+                            </DataTrigger>
+                        </DataTemplate.Triggers>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+    </DockPanel>
+
+    <Window.CommandBindings>
+        <CommandBinding Command="Open" Executed="OpenOnExecuted" />
+    </Window.CommandBindings>
+</Window>
+

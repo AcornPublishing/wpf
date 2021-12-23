@@ -1,0 +1,27 @@
+<!-- ==========================================
+      Pulsing.xaml (c) 2006 by Charles Petzold 
+     ========================================== -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Ellipse HorizontalAlignment="Center" VerticalAlignment="Center"
+             Width="48" Fill="Red"
+             Height="{Binding RelativeSource={RelativeSource self}, 
+                              Path=Width}">
+
+        <Ellipse.Triggers>
+            <EventTrigger RoutedEvent="Ellipse.Loaded">
+                <BeginStoryboard>
+                    <Storyboard TargetProperty="Width" 
+                                RepeatBehavior="Forever">
+                        <DoubleAnimation From="48" To="288" 
+                                         Duration="0:0:0.25"
+                                         BeginTime="0:0:1"
+                                         RepeatBehavior="2x"
+                                         FillBehavior="Stop" />
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Ellipse.Triggers>
+    </Ellipse>
+</Page>

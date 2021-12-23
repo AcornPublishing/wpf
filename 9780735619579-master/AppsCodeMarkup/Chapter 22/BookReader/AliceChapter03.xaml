@@ -1,0 +1,26 @@
+<!-- =====================
+      AliceChapter03.xaml
+     ===================== -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      Title="III. A Caucus-Race and a Long Tale">
+    <FlowDocumentReader>
+        <FlowDocument>
+            <Paragraph TextAlignment="Center" FontSize="16pt">
+                 Chapter III
+            </Paragraph>
+            <Paragraph TextAlignment="Center" FontSize="16pt">
+                 A Caucus-Race and a Long Tale
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                They were indeed a queer-looking party that 
+                assembled on the bank&#x2014;the birds with 
+                draggled feathers, the animals with their fur
+                clinging close to them, and all dripping wet,
+                cross, and uncomfortable.
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                ...
+            </Paragraph>
+        </FlowDocument>
+    </FlowDocumentReader>
+</Page>

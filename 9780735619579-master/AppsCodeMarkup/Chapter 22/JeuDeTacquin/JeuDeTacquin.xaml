@@ -1,0 +1,44 @@
+﻿<!-- ===============================================
+      JeuDeTacquin.xaml (c) 2006 by Charles Petzold
+     =============================================== -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      x:Class="Petzold.JeuDeTacquin.JeuDeTacquin"
+      WindowTitle="Jeu de Tacquin" 
+      Background="LightGray" 
+      Focusable="True"
+      KeepAlive="True">
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center"
+          Background="LightGray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" FontFamily="Garamond" 
+                   FontSize="96" FontStyle="Italic" Margin="12">
+            Jeu de Tacquin
+        </TextBlock>
+        <Border Grid.Row="1" BorderBrush="Black" BorderThickness = "1"
+                HorizontalAlignment="Center" VerticalAlignment="Center">
+        
+            <UniformGrid Name="unigrid" />
+       
+        </Border>
+        <Button Grid.Row="2" HorizontalAlignment="Left" Margin="12"
+                MinWidth="1in" Click="ScrambleOnClick">
+            Scramble
+        </Button>
+        <Button Grid.Row="2" HorizontalAlignment="Right" Margin="12"
+                MinWidth="1in" Click="NextOnClick">
+            Next Larger >>
+        </Button>
+      
+        <TextBlock Grid.Row="3"
+                   HorizontalAlignment="Center" VerticalAlignment="Center" 
+                   Margin="12">
+            (c) 2006 by Charles Petzold        
+        </TextBlock>
+    </Grid>
+</Page>

@@ -1,0 +1,14 @@
+﻿<!-- ========================================================
+      UseCommonResourcesApp.xaml (c) 2006 by Charles Petzold
+     ======================================================== -->
+<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             StartupUri="UseCommonResourcesWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="MyResources1.xaml" />
+                <ResourceDictionary Source="MyResources2.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

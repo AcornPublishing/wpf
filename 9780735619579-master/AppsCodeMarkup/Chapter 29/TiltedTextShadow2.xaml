@@ -1,0 +1,49 @@
+<!-- ====================================================
+      TiltedTextShadow2.xaml (c) 2006 by Charles Petzold
+     ==================================================== -->
+<Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:s="clr-namespace:System;assembly=mscorlib" >
+    <Canvas.Resources>
+        <FontFamily x:Key="fntfam">
+            Times New Roman  
+        </FontFamily>
+
+        <s:Double x:Key="fntsize">
+            144
+        </s:Double>
+
+        <TransformGroup x:Key="xform">
+            <ScaleTransform ScaleX="{Binding Source={StaticResource fntfam}, 
+                                             Path=LineSpacing}" />
+            <ScaleTransform ScaleX="{StaticResource fntsize}" />
+        </TransformGroup>
+
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="FontFamily" Value="{StaticResource fntfam}" />
+            <Setter Property="FontSize" Value="{StaticResource fntsize}" />
+            <Setter Property="Text" Value="quirky" />
+            <Setter Property="Canvas.Left" Value="96" />
+            <Setter Property="Canvas.Top" Value="192" />
+        </Style>
+    </Canvas.Resources>
+
+    <!-- Shadow Text. -->
+
+    <TextBlock Foreground="DarkGray">
+        <TextBlock.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform ScaleY="2.5" 
+                    CenterY="{Binding Source={StaticResource xform}, 
+                                      Path=Value.M11}" />
+                <SkewTransform AngleX="-45" 
+                    CenterY="{Binding Source={StaticResource xform}, 
+                                      Path=Value.M11}"/>
+            </TransformGroup>
+        </TextBlock.RenderTransform>
+    </TextBlock>
+
+    <!-- Foreground Text. -->
+
+    <TextBlock />
+</Canvas>

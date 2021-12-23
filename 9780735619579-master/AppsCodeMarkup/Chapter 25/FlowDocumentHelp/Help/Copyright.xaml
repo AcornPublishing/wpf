@@ -1,0 +1,17 @@
+﻿<!-- ============================================
+      Copyright.xaml (c) 2006 by Charles Petzold
+     ============================================ -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Copyright Information">
+    <FlowDocumentReader>
+        <FlowDocument>
+            <Paragraph Style="{StaticResource ProgramName}">
+                Generic Application
+            </Paragraph>
+            <Paragraph Style="{StaticResource Center}">
+                &#x00A9; 2006 by Charles Petzold
+            </Paragraph>
+        </FlowDocument>
+    </FlowDocumentReader>
+</Page>

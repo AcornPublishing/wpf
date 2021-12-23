@@ -1,0 +1,67 @@
+<!-- =========================================
+      Flower.xaml (c) 2006 by Charles Petzold
+     ========================================= -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Background="White">
+    <Viewbox>
+
+        <!-- Canvas is 200 units square with Cartesian coordinates. -->
+
+        <Canvas Width="200" Height="200"
+                RenderTransform="1 0 0 -1 100 100" >
+            <Canvas.Resources>
+
+                <!-- Style to avoid too much repetition in petals. -->
+
+                <Style TargetType="{x:Type Path}" x:Key="petal">
+                    <Setter Property="Stroke" Value="Black" />
+                    <Setter Property="Fill" Value="Red" />
+                    <Setter Property="Data" 
+                            Value="M 0 0 C 12.5 12.5, 47.5 12.5, 60 0
+                                         C 47.5 -12.5, 12.5 -12.5, 0 0 Z" />
+                </Style>
+            </Canvas.Resources>
+
+            <!-- The green stem. -->
+            
+            <Path Stroke="Green" StrokeThickness="5"
+                  Data="M -100 -100 C -100 -50, -50 50, 0 0">
+            </Path>
+
+            <!-- Eight petals, many of them rotated. -->
+
+            <Path Style="{StaticResource petal}" />
+
+            <Path Style="{StaticResource petal}"
+                  RenderTransform=".7 -.7 .7 .7 0 0" />
+
+            <Path Style="{StaticResource petal}"
+                  RenderTransform="0 -1 1 0 0 0" />
+
+            <Path Style="{StaticResource petal}"
+                  RenderTransform="-.7 -.7 .7 -.7 0 0" />
+
+            <Path Style="{StaticResource petal}"
+                  RenderTransform="-1 0 0 -1 0 0" />
+
+            <Path Style="{StaticResource petal}"
+                  RenderTransform="-.7 .7 -.7 -.7 0 0" />
+
+            <Path Style="{StaticResource petal}"
+                  RenderTransform="0 1 -1 0 0 0" />
+
+            <Path Style="{StaticResource petal}"
+                  RenderTransform=".7 .7 -.7 .7 0 0" />
+
+            <!-- Put yellow circle in center to attract bees. -->
+
+            <Path Fill="Yellow" Stroke="Black">
+                <Path.Data>
+                    <EllipseGeometry Center="0 0" 
+                                     RadiusX="15" RadiusY="15" />
+                </Path.Data>
+            </Path>
+        </Canvas>
+    </Viewbox>
+</Page>

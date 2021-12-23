@@ -1,0 +1,13 @@
+<!-- ====================================================
+      SimpleVisualBrush.xaml (c) 2006 by Charles Petzold
+     ==================================================== -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Page.Background>
+        <VisualBrush>
+            <VisualBrush.Visual>
+                <Button Content="Button?" />
+            </VisualBrush.Visual>
+        </VisualBrush>
+    </Page.Background>
+</Page>

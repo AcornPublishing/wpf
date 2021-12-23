@@ -1,0 +1,10 @@
+<!-- ===================================================
+      PathMiniLanguage.xaml (c) 2006 by Charles Petzold 
+     =================================================== -->
+<Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Path Fill="Aqua" Stroke="Magenta" StrokeThickness="3"
+          Data="M 50 75 L 250 75, 250 275, 50 275 Z" />
+
+</Canvas>

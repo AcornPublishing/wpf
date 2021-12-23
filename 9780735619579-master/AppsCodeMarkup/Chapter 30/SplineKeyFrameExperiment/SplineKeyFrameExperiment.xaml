@@ -1,0 +1,132 @@
+<!-- ===========================================================
+      SplineKeyFrameExperiment.xaml (c) 2006 by Charles Petzold 
+     =========================================================== -->
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:src="clr-namespace:Petzold.SplineKeyFrameExperiment"
+        x:Class="Petzold.SplineKeyFrameExperiment.SplineKeyFrameExperiment"
+        Title="SplineKeyFrame Experiment"
+        Name="window">
+    <Canvas>
+        <!-- Canvas with gray box and axes with tick marks. -->
+        <Canvas Name="canvMain" Canvas.Left="24" Canvas.Top="24" >
+
+            <!-- Horizontal axis header. -->
+            <Line X1="0.5in" Y1="0.08in" X2="2.75in" Y2="0.08in" 
+                  Stroke="{DynamicResource {x:Static 
+                                    SystemColors.WindowTextBrushKey}}" />
+            <TextBlock Text="Time" Canvas.Left="2.85in" Canvas.Top="0in" />
+            <Line X1="3.25in" Y1="0.08in" X2="5.5in" Y2="0.08in"
+                  Stroke="{DynamicResource {x:Static 
+                                    SystemColors.WindowTextBrushKey}}" />
+
+            <!-- Gray box for displaying grid. -->
+            <Canvas Canvas.Left="48" Canvas.Top="48" Width="480" Height="480"
+                    Background="LightGray"
+                    MouseDown="CanvasOnMouse" MouseMove="CanvasOnMouse">
+
+                <!-- The Bezier curve formed by the control points. -->
+                <Path Stroke="Black" StrokeThickness="0.005">
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathFigure StartPoint="0 0">
+                                <BezierSegment 
+                                    Point1="{Binding ElementName=window, 
+                                                     Path=ControlPoint1}"
+                                    Point2="{Binding ElementName=window, 
+                                                     Path=ControlPoint2}"
+                                    Point3="1 1" />
+                            </PathFigure>
+                        </PathGeometry>
+                    </Path.Data>
+                    <Path.RenderTransform>
+                        <ScaleTransform ScaleX="480" ScaleY="480" />
+                    </Path.RenderTransform>
+                </Path>
+
+                <!-- Line between (0,0) and first control point. -->
+                <Line Stroke="DarkGray" StrokeThickness="0.005" X1="0" Y1="0"
+                      X2="{Binding ElementName=window, Path=ControlPoint1.X}"
+                      Y2="{Binding ElementName=window, Path=ControlPoint1.Y}">
+                    <Line.RenderTransform>
+                        <ScaleTransform ScaleX="480" ScaleY="480" />
+                    </Line.RenderTransform>
+                </Line>
+
+                <!-- Line between second control point and (1,1). -->
+                <Line Stroke="DarkGray" StrokeThickness="0.005" X1="1" Y1="1"
+                      X2="{Binding ElementName=window, Path=ControlPoint2.X}"
+                      Y2="{Binding ElementName=window, Path=ControlPoint2.Y}">
+                    <Line.RenderTransform>
+                        <ScaleTransform ScaleX="480" ScaleY="480" />
+                    </Line.RenderTransform>
+                </Line>
+            </Canvas>
+        </Canvas>
+
+        <!-- Ball showing elapsing time (changed by animation). -->
+        <Path Name="time" Fill="Blue">
+            <Path.Data>
+                <EllipseGeometry Center="72 556" RadiusX="6" RadiusY="6" />
+            </Path.Data>
+        </Path>
+
+        <!-- Ball showing changing value (changed by animation. -->
+        <Path Name="value" Fill="Blue">
+            <Path.Data>
+                <EllipseGeometry Center="556 72" RadiusX="6" RadiusY="6" />
+            </Path.Data>
+        </Path>
+
+        <!-- Line showing elapsing time. -->
+        <Line Stroke="Blue"
+              X1="{Binding ElementName=time, Path=Data.Center.X}"
+              Y1="{Binding ElementName=value, Path=Data.Center.Y}"
+              X2="{Binding ElementName=time, Path=Data.Center.X}"
+              Y2="556" />
+
+        <!-- Line showing changing value. -->
+        <Line Stroke="Blue"
+              X1="{Binding ElementName=time, Path=Data.Center.X}"
+              Y1="{Binding ElementName=value, Path=Data.Center.Y}"
+              X2="556" 
+              Y2="{Binding ElementName=value, Path=Data.Center.Y}" />
+
+        <!-- Label showing control points (set from code). -->
+        <Label Name="lblInfo" Canvas.Left="38" Canvas.Top="580"  />
+
+        <!-- Go button. -->
+        <Button Canvas.Left="450" Canvas.Top="580" MinWidth="72" Content="Go!">
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="Button.Click">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <!-- Show time elapsing linearly. -->
+                            <PointAnimation 
+                                Storyboard.TargetName="time"
+                                Storyboard.TargetProperty="Data.Center"
+                                From="72 556" To="552 556" 
+                                Duration="0:0:5" />
+
+                            <!-- Show value changing by spline. -->
+                            <PointAnimationUsingKeyFrames 
+                                    Storyboard.TargetName="value"
+                                    Storyboard.TargetProperty="Data.Center">
+                                <DiscretePointKeyFrame KeyTime="0:0:0" 
+                                                       Value="556 72" />
+
+                                <SplinePointKeyFrame KeyTime="0:0:5" 
+                                                     Value="556 552">
+                                    <!-- KeySpline set from code. -->
+                                    <SplinePointKeyFrame.KeySpline>
+                                        <KeySpline x:Name="spline" />
+                                    </SplinePointKeyFrame.KeySpline>
+                                </SplinePointKeyFrame>
+                            </PointAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
+        </Button>
+    </Canvas>
+</Window>

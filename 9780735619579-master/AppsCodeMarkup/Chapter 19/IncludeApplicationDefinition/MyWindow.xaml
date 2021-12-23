@@ -1,0 +1,17 @@
+﻿<!-- ===========================================
+      MyWindow.xaml (c) 2006 by Charles Petzold
+     =========================================== -->
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Petzold.IncludeApplicationDefinition.MyWindow"
+        Title="Include Application Definition" 
+        SizeToContent="WidthAndHeight" 
+        ResizeMode="CanMinimize">
+    <Button HorizontalAlignment="Center" 
+            VerticalAlignment="Center" 
+            Margin="1.5in" 
+            Click="ButtonOnClick">
+        Click the Button
+    </Button>
+</Window>
+

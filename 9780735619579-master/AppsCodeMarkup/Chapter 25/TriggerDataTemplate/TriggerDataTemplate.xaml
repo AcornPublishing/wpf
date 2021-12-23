@@ -1,0 +1,79 @@
+﻿<!-- ======================================================
+      TriggerDataTemplate.xaml (c) 2006 by Charles Petzold
+     ====================================================== -->
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:emp="clr-namespace:Petzold.ContentTemplateDemo"
+        x:Class="Petzold.TriggerDataTemplate.TriggerDataTemplate"
+        Title="Trigger DataTemplate">
+    <Window.Resources>
+        <DataTemplate x:Key="template">
+            <DockPanel>
+                <Image Name="img" DockPanel.Dock="Left"
+                       Stretch="None" Source="{Binding Path=Face}" />
+                <UniformGrid Rows="2" VerticalAlignment="Center" Margin="12">
+                    <TextBlock FontSize="16pt" TextAlignment="Center" 
+                               Text="{Binding Path=Name}"/>
+                    <StackPanel Orientation="Horizontal" 
+                                TextBlock.FontSize="12pt">
+                        <TextBlock Text="{Binding Path=BirthDate.Month}" />
+                        <TextBlock Text="/" />
+                        <TextBlock Text="{Binding Path=BirthDate.Day}" />
+                        <TextBlock Text="/" />
+                        <TextBlock Text="{Binding Path=BirthDate.Year}" />
+                    </StackPanel>
+                </UniformGrid>
+            </DockPanel>
+            <DataTemplate.Triggers>
+                <DataTrigger Binding="{Binding Path=LeftHanded}" Value="False">
+                    <Setter TargetName="img" 
+                            Property="DockPanel.Dock" Value="Right" />
+                </DataTrigger>
+            </DataTemplate.Triggers>
+        </DataTemplate>
+
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="12" />
+        </Style>
+    </Window.Resources>
+    
+    <StackPanel>
+        <Button ContentTemplate="{StaticResource template}">
+            <Button.Content>
+                <emp:Employee Name="Betty"
+                              BirthDate="8/31/1970"
+                              Face="Betty.png"
+                              LeftHanded="False"/>
+            </Button.Content>
+        </Button>
+
+        <Button ContentTemplate="{StaticResource template}">
+            <Button.Content>
+                <emp:Employee Name="Edgar"
+                              BirthDate="2/2/1965"
+                              Face="Edgar.png"
+                              LeftHanded="True"/>
+            </Button.Content>
+        </Button>
+
+        <Button ContentTemplate="{StaticResource template}">
+            <Button.Content>
+                <emp:Employee Name="Sally"
+                      BirthDate="7/12/1980"
+                      Face="Sally.png"
+                      LeftHanded="True"/>
+            </Button.Content>
+        </Button>
+
+        <Button ContentTemplate="{StaticResource template}">
+            <Button.Content>
+                <emp:Employee Name="Jim"
+                              BirthDate="6/15/1975"
+                              Face="Jim.png"
+                              LeftHanded="False"/>
+            </Button.Content>
+        </Button>
+    </StackPanel>
+</Window>

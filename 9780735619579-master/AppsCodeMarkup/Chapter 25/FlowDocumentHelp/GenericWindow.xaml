@@ -1,0 +1,22 @@
+﻿<!-- ================================================
+      GenericWindow.xaml (c) 2006 by Charles Petzold
+     ================================================ -->
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Petzold.Generic.GenericWindow"
+        Title="Generic">
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="_Help">
+                <MenuItem Header="_Help for Generic..."
+                          Command="Help" />
+            </MenuItem>
+        </Menu>
+
+        <TextBox AcceptsReturn="True" />
+    </DockPanel>
+    
+    <Window.CommandBindings>
+        <CommandBinding Command="Help" Executed="HelpOnExecuted" />    
+    </Window.CommandBindings>
+</Window>

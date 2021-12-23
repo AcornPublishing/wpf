@@ -1,0 +1,32 @@
+<!-- ========================================================
+      StylesWithTargetTypes.xaml (c) 2006 by Charles Petzold
+     ======================================================== -->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel.Resources>
+
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="Foreground" Value="Blue" />
+        </Style>
+
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="Foreground" Value="Red" />
+        </Style>
+
+    </StackPanel.Resources>
+
+    <Button>
+        Button with Text Content
+    </Button>
+
+    <TextBlock>
+        TextBlock Text
+    </TextBlock>
+
+    <Button>
+        <TextBlock>
+            Button with TextBlock Content
+        </TextBlock>
+    </Button>
+</StackPanel>

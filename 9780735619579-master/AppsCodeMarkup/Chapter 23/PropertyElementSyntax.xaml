@@ -1,0 +1,21 @@
+<!-- ========================================================
+      PropertyElementSyntax.xaml (c) 2006 by Charles Petzold 
+     ======================================================== -->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Binding Source. -->
+
+    <ScrollBar Name="scroll"
+               Orientation="Horizontal" Margin="24" 
+               Maximum="100" LargeChange="10" SmallChange="1" />
+
+    <!-- Binding Target. -->
+
+    <Label HorizontalAlignment="Center">
+        <Label.Content> 
+            <Binding ElementName="scroll" Path="Value" />
+        </Label.Content>
+    </Label>
+
+</StackPanel>

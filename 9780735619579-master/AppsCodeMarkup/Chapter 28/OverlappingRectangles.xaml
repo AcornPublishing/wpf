@@ -1,0 +1,28 @@
+<!-- ========================================================
+      OverlappingRectangles.xaml (c) 2006 by Charles Petzold 
+     ======================================================== -->
+<Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Path Fill="Gold" Stroke="Red" StrokeThickness="3">
+        <Path.Data>
+            <RectangleGeometry Rect="96 96 192 192" />
+        </Path.Data>
+    </Path>
+
+    <Path Fill="Gold" Stroke="Red" StrokeThickness="3">
+        <Path.Data>
+            <RectangleGeometry Rect="192 192 192 192" />
+        </Path.Data>
+    </Path>
+
+    <Path Fill="Gold" Stroke="Red" StrokeThickness="3">
+        <Path.Data>
+            <GeometryGroup>
+                <RectangleGeometry Rect="480 96 192 192" />
+                <RectangleGeometry Rect="576 192 192 192" />
+            </GeometryGroup>
+        </Path.Data>
+    </Path>
+
+</Canvas>

@@ -1,0 +1,41 @@
+<!-- ========================================================
+      TargetTypeDerivatives.xaml (c) 2006 by Charles Petzold
+     ======================================================== -->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel.Resources>
+
+        <Style TargetType="{x:Type Control}">
+            <Setter Property="Control.FontSize" Value="24" />
+            <Setter Property="Control.Foreground" Value="Blue" />
+            <Setter Property="Control.HorizontalAlignment" Value="Center" />
+            <Setter Property="Control.Margin" Value="24" />
+        </Style>
+
+        <Style TargetType="{x:Type Button}"
+               BasedOn="{StaticResource {x:Type Control}}">
+            <Setter Property="Control.Foreground" Value="Red" />
+        </Style>
+
+        <Style TargetType="{x:Type Label}"
+               BasedOn="{StaticResource {x:Type Control}}">
+            <Setter Property="Control.Foreground" Value="Green" />
+        </Style>
+
+        <Style TargetType="{x:Type TextBox}"
+               BasedOn="{StaticResource {x:Type Control}}">
+        </Style>
+    </StackPanel.Resources>
+
+    <Button>
+        Button Control
+    </Button>
+
+    <Label>
+        Label Control
+    </Label>
+
+    <TextBox>
+        TextBox Control
+    </TextBox>
+</StackPanel>

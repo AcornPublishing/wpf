@@ -1,0 +1,64 @@
+﻿<!-- ======================================================
+      EmployeeWheelWindow.xaml (c) 2006 by Charles Petzold
+     ====================================================== -->
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:rp="clr-namespace:Petzold.CircleTheButtons" 
+        x:Class="Petzold.EmployeeWheel.EmployeeWheel"
+        Title="Employee Wheel">
+
+    <Window.Resources>
+        <XmlDataProvider x:Key="emps" 
+                         Source="Employees.xml" XPath="Employees" />
+    </Window.Resources>
+
+    <Grid>
+        <ListBox Name="lstbox" 
+                 HorizontalAlignment="Center" VerticalAlignment="Center"
+                 ItemsSource="{Binding Source={StaticResource emps}, 
+                                       XPath=Employee}"
+                 SelectedValuePath="Face">
+
+            <!-- Panel used for displaying the items. -->
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <rp:RadialPanel Orientation="ByHeight" />
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+
+            <!-- Template used for displaying each item. -->
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <DockPanel Margin="3">
+                        <Image DockPanel.Dock="Right" Stretch="None" 
+                               Source="{Binding XPath=Face}" />
+                        <UniformGrid Rows="3" VerticalAlignment="Center" 
+                                     Margin="12">
+                            <TextBlock FontSize="16pt" TextAlignment="Center" 
+                                       Text="{Binding XPath=@Name}"/>
+                            <TextBlock FontSize="12pt" TextAlignment="Center"
+                                       Text="{Binding XPath=BirthDate}" />
+                            <TextBlock Name="txtblkHanded" 
+                                       FontSize="12pt" TextAlignment="Center"
+                                       Text="Right-Handed" />
+                        </UniformGrid>
+                    </DockPanel>
+
+                    <!-- DataTrigger to display "Left-Handed." -->
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding XPath=LeftHanded}" 
+                                     Value="True">
+                            <Setter TargetName="txtblkHanded" Property="Text"
+                                    Value="Left-Handed" />
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!-- Image in center shows selected item from ListBox. -->
+        <Image HorizontalAlignment="Center" VerticalAlignment="Center" 
+               Stretch="None" 
+               Source="{Binding ElementName=lstbox, Path=SelectedValue}" />
+    </Grid>
+</Window>

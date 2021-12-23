@@ -1,0 +1,46 @@
+﻿<!-- =====================================================
+      TextGeometryWindow.xaml (c) 2006 by Charles Petzold
+     ===================================================== -->
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:src="clr-namespace:Petzold.TextGeometryDemo" 
+        Title="TextGeometry Demo">
+    <Window.Resources>
+        <src:TextGeometry x:Key="txtHollow" Text="Hollow"
+                          FontFamily="Times New Roman" 
+                          FontSize="192" FontWeight="Bold" />
+        
+        <src:TextGeometry x:Key="txtShadow" Text="Shadow"
+                          FontFamily="Times New Roman"
+                          FontSize="192" FontWeight="Bold" />
+    </Window.Resources>
+
+    <TabControl>
+        <TabItem Header="Hollow">
+            <Path Stroke="Blue" StrokeThickness="5"
+                  Data="{Binding Source={StaticResource txtHollow}, 
+                                 Path=Geometry}" />
+        </TabItem>
+
+        <TabItem Header="Dotted">
+            <Path Stroke="Blue" StrokeThickness="5"
+                  StrokeDashArray="{Binding Source={x:Static DashStyles.Dot}, 
+                                            Path=Dashes}"
+                  StrokeDashCap="Round"
+                  Data="{Binding Source={StaticResource txtHollow}, 
+                                 Path=Geometry}" />
+        </TabItem>
+
+        <TabItem Header="Shadow">
+            <Canvas>
+                <Path Fill="DarkGray"
+                      Data="{Binding Source={StaticResource txtShadow}, 
+                                     Path=Geometry}"
+                      Canvas.Left="12" Canvas.Top="12" />
+                <Path Stroke="Black" Fill="White" 
+                      Data="{Binding Source={StaticResource txtShadow}, 
+                                     Path=Geometry}" />
+            </Canvas>
+        </TabItem>
+    </TabControl>
+</Window>

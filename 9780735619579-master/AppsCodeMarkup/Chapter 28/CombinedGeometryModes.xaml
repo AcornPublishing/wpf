@@ -1,0 +1,105 @@
+<!-- ========================================================
+      CombinedGeometryModes.xaml (c) 2006 by Charles Petzold 
+     ======================================================== -->
+<UniformGrid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Rows="2" Columns="2" TextBlock.FontSize="12pt">
+
+    <UniformGrid.Resources>
+        <Style TargetType="{x:Type Path}">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="Fill" Value="Blue" />
+            <Setter Property="Stroke" Value="Red" />
+            <Setter Property="StrokeThickness" Value="5" />
+        </Style>
+    </UniformGrid.Resources>
+
+    <!-- GeometryCombineMode = "Union". -->
+
+    <Grid>
+        <TextBlock HorizontalAlignment="Center">
+            GeometryCombineMode="Union"
+        </TextBlock>
+        <Path> 
+            <Path.Data>
+                <CombinedGeometry GeometryCombineMode="Union">
+                    <CombinedGeometry.Geometry1>
+                        <EllipseGeometry Center="96 96" 
+                                         RadiusX="96" RadiusY="96" />
+                    </CombinedGeometry.Geometry1>
+                    <CombinedGeometry.Geometry2>
+                           <EllipseGeometry Center="48 48"
+                                            RadiusX="96" RadiusY="96" />
+                    </CombinedGeometry.Geometry2>
+                </CombinedGeometry>
+            </Path.Data>
+        </Path>
+    </Grid>
+
+    <!-- GeometryCombineMode = "Intersect". -->
+
+    <Grid>
+        <TextBlock HorizontalAlignment="Center">
+            GeometryCombineMode="Intersect"
+        </TextBlock>
+        <Path> 
+            <Path.Data>
+                <CombinedGeometry GeometryCombineMode="Intersect">
+                    <CombinedGeometry.Geometry1>
+                        <EllipseGeometry Center="96 96" 
+                                         RadiusX="96" RadiusY="96" />
+                    </CombinedGeometry.Geometry1>
+                    <CombinedGeometry.Geometry2>
+                        <EllipseGeometry Center="48 48" 
+                                         RadiusX="96" RadiusY="96" />
+                    </CombinedGeometry.Geometry2>
+                </CombinedGeometry>
+            </Path.Data>
+        </Path>
+    </Grid>
+
+    <!-- GeometryCombineMode = "Xor". -->
+
+    <Grid>
+        <TextBlock HorizontalAlignment="Center">
+            GeometryCombineMode="Xor"
+        </TextBlock>
+        <Path> 
+            <Path.Data>
+                <CombinedGeometry GeometryCombineMode="Xor">
+                    <CombinedGeometry.Geometry1>
+                        <EllipseGeometry Center="96 96" 
+                                         RadiusX="96" RadiusY="96" />
+                    </CombinedGeometry.Geometry1>
+                    <CombinedGeometry.Geometry2>
+                        <EllipseGeometry Center="48 48" 
+                                         RadiusX="96" RadiusY="96" />
+                    </CombinedGeometry.Geometry2>
+                </CombinedGeometry>
+            </Path.Data>
+        </Path>
+    </Grid>
+
+    <!-- GeometryCombineMode = "Exclude". -->
+
+    <Grid>
+        <TextBlock HorizontalAlignment="Center">
+            GeometryCombineMode="Exclude"
+        </TextBlock>
+        <Path> 
+            <Path.Data>
+                <CombinedGeometry GeometryCombineMode="Exclude">
+                    <CombinedGeometry.Geometry1>
+                        <EllipseGeometry Center="96 96" 
+                                         RadiusX="96" RadiusY="96" />
+                    </CombinedGeometry.Geometry1>
+                    <CombinedGeometry.Geometry2>
+                        <EllipseGeometry Center="48 48" 
+                                         RadiusX="96" RadiusY="96" />
+                    </CombinedGeometry.Geometry2>
+                </CombinedGeometry>
+            </Path.Data>
+        </Path>
+    </Grid>
+</UniformGrid>

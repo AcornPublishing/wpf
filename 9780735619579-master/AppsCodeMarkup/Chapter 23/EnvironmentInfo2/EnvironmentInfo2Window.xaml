@@ -1,0 +1,36 @@
+﻿<!-- =========================================================
+      EnvironmentInfo2Window.xaml (c) 2006 by Charles Petzold
+     ========================================================= -->
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:s="clr-namespace:System;assembly=mscorlib"
+        xmlns:src="clr-namespace:Petzold.EnvironmentInfo2" 
+        Title="Environment Info">
+    <Window.Resources>
+        <src:FormattedMultiTextConverter x:Key="conv" />
+    </Window.Resources>
+
+    <TextBlock>
+        <TextBlock.Text>
+            <MultiBinding Converter="{StaticResource conv}"
+                          ConverterParameter=
+"Operating System Version: {0}
+&#x000A;.NET Version: {1}
+&#x000A;Machine Name: {2}
+&#x000A;User Name: {3}
+&#x000A;User Domain Name: {4}
+&#x000A;System Directory: {5}
+&#x000A;Current Directory: {6}
+&#x000A;Command Line: {7}" >
+                <Binding Source="{x:Static s:Environment.OSVersion}" />
+                <Binding Source="{x:Static s:Environment.Version}" />
+                <Binding Source="{x:Static s:Environment.MachineName}" />
+                <Binding Source="{x:Static s:Environment.UserName}" />
+                <Binding Source="{x:Static s:Environment.UserDomainName}" />
+                <Binding Source="{x:Static s:Environment.SystemDirectory}" />
+                <Binding Source="{x:Static s:Environment.CurrentDirectory}" />
+                <Binding Source="{x:Static s:Environment.CommandLine}" />
+            </MultiBinding>
+        </TextBlock.Text>
+    </TextBlock>
+</Window>

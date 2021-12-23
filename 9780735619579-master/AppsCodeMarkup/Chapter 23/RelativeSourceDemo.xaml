@@ -1,0 +1,39 @@
+<!-- =====================================================
+      RelativeSourceDemo.xaml (c) 2006 by Charles Petzold 
+     ===================================================== -->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            TextBlock.FontSize="12" >
+
+    <StackPanel Orientation="Horizontal"
+                HorizontalAlignment="Center">
+        <TextBlock Text="This TextBlock has a FontFamily of " />
+        <TextBlock Text="{Binding RelativeSource={RelativeSource self},
+                                  Path=FontFamily}" />
+        <TextBlock Text=" and a FontSize of " />
+        <TextBlock Text="{Binding RelativeSource={RelativeSource self}, 
+                                  Path=FontSize}" />
+    </StackPanel>
+
+    <StackPanel Orientation="Horizontal"
+                HorizontalAlignment="Center">
+        <TextBlock Text="This TextBlock is inside a StackPanel with " />
+        <TextBlock Text=
+            "{Binding RelativeSource={RelativeSource 
+                            AncestorType={x:Type StackPanel}}, 
+                      Path=Orientation}" />
+
+        <TextBlock Text=" orientation" />
+    </StackPanel>
+
+    <StackPanel Orientation="Horizontal"
+                HorizontalAlignment="Center">
+        <TextBlock Text="The parent StackPanel has " />
+        <TextBlock Text=
+            "{Binding RelativeSource={RelativeSource 
+                            AncestorType={x:Type StackPanel}, AncestorLevel=2},
+                      Path=Orientation}" />
+
+        <TextBlock Text=" orientation" />
+    </StackPanel>
+</StackPanel>

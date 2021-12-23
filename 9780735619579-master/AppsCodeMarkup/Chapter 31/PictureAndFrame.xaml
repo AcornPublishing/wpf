@@ -1,0 +1,57 @@
+<!-- ==================================================
+      PictureAndFrame.xaml (c) 2006 by Charles Petzold
+     ================================================== -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Image Stretch="None">
+        <Image.Source>
+            <DrawingImage>
+                <DrawingImage.Drawing>
+                    <DrawingGroup>
+
+                        <!-- Bitmap image of fixed size. -->
+                        <ImageDrawing Rect="5 5 200 240"
+                                      ImageSource=
+                            "http://www.charlespetzold.com/PetzoldTattoo.jpg" />
+
+                        <!-- Dotted pen for scalloped pattern effect. -->
+                        <GeometryDrawing>
+                            <GeometryDrawing.Pen>
+                                <Pen Brush="DodgerBlue" Thickness="10" 
+                                                        DashCap="Round">
+                                    <Pen.DashStyle>
+                                        <DashStyle Dashes="0 1" />
+                                    </Pen.DashStyle>
+                                </Pen>
+                            </GeometryDrawing.Pen>
+
+                            <GeometryDrawing.Geometry>
+                                <RectangleGeometry Rect="5 5 200 240" />
+                            </GeometryDrawing.Geometry>
+                        </GeometryDrawing>
+
+                        <!-- Solid pen to hide half the dotted pen. -->
+                        <GeometryDrawing>
+                            <GeometryDrawing.Pen>
+                                <Pen Brush="DodgerBlue" Thickness="5" />
+                            </GeometryDrawing.Pen>
+
+                            <GeometryDrawing.Geometry>
+                                <RectangleGeometry Rect="2.5 2.5 205 245" />
+                            </GeometryDrawing.Geometry>
+                        </GeometryDrawing>
+
+                        <!-- Wire to hang the frame on the wall. -->
+                        <GeometryDrawing Geometry="M 10 0 L 105 -50 L 200 0" >
+                            <GeometryDrawing.Pen>
+                                <Pen Brush="Black" />
+                            </GeometryDrawing.Pen>
+                        </GeometryDrawing>
+
+                    </DrawingGroup>
+                </DrawingImage.Drawing>
+            </DrawingImage>
+        </Image.Source>
+    </Image>
+</Page>

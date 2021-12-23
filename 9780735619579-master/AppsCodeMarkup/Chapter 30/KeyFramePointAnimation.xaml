@@ -1,0 +1,30 @@
+<!-- =========================================================
+      KeyFramePointAnimation.xaml (c) 2006 by Charles Petzold 
+     ========================================================= -->
+<Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Rectangle Stroke="Black" Width="480" Height="480" />
+
+    <Path Fill="Aqua" Stroke="Chocolate" StrokeThickness="3">
+        <Path.Data>
+            <EllipseGeometry x:Name="elips" 
+                             Center="240 50" RadiusX="48" RadiusY="48" />
+        </Path.Data>
+    </Path>
+    <Canvas.Triggers>
+        <EventTrigger RoutedEvent="Canvas.Loaded">
+            <BeginStoryboard>
+                <Storyboard TargetName="elips" TargetProperty="Center">
+                    <PointAnimationUsingKeyFrames Duration="0:0:4"
+                                                  RepeatBehavior="Forever">
+                        <LinearPointKeyFrame Value="430 240" KeyTime="0:0:1" />
+                        <LinearPointKeyFrame Value="240 430" KeyTime="0:0:2" />
+                        <LinearPointKeyFrame Value="50 240" KeyTime="0:0:3" />
+                        <LinearPointKeyFrame Value="240 50" KeyTime="0:0:4" />
+                    </PointAnimationUsingKeyFrames>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Canvas.Triggers>
+</Canvas>

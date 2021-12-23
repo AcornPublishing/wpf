@@ -1,0 +1,37 @@
+<!-- =====================
+      AliceChapter02.xaml
+     ===================== -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      Title="II. The Pool of Tears">
+    <FlowDocumentReader>
+        <FlowDocument>
+            <Paragraph TextAlignment="Center" FontSize="16pt">
+                 Chapter II
+            </Paragraph>
+            <Paragraph TextAlignment="Center" FontSize="16pt">
+                 The Pool of Tears
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                &#x201C;Curioser and curioser!&#x201D; cried Alice
+                (she was so much surprised, that for the moment she
+                quite forgot how to speak good English). &#x201C;Now
+                I&#x2019;m opening out like the largest telescope that
+                ever was! Good-bye, feet!&#x201D; (for when she 
+                looked down at her feet, they seemed to be almost
+                out of sight, they were getting so far off).
+                &#x201C;Oh, my poor little feet, I wonder who will
+                put on your shoes and stockings for you now, dears?
+                I&#x2019;m sure <Italic>I</Italic> sha&#x2019;n&#x2019;t
+                be able! I shall be a great deal too far off to trouble
+                myself about you: you must manage the best way you 
+                can&#x2014;but I must be kind to them,&#x201D;
+                thought Alice, &#x201C;or perhaps they won&#x2019;t
+                walk the way I want to go! Let me see. I&#x2019;ll
+                give them a new pair of boots every Christmas.&#x201D;
+            </Paragraph>
+            <Paragraph TextIndent="24">
+                ...
+            </Paragraph>
+        </FlowDocument>
+    </FlowDocumentReader>
+</Page>

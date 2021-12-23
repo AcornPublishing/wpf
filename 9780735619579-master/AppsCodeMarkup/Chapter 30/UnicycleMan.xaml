@@ -1,0 +1,94 @@
+<!-- ==============================================
+      UnicycleMan.xaml (c) 2006 by Charles Petzold 
+     ============================================== -->
+<Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Canvas.Resources>
+        <PathGeometry x:Key="path"
+                      Figures="M 200  200 
+                               C 300    0,  500 400, 700 200
+                               C 900    0, 1000 200, 900 300
+                               C 100 1100, 1200 800, 400 500
+                               C 100  400,  100 400, 200 200" />
+        <Style TargetType="{x:Type Path}">
+            <Setter Property="Stroke"
+                    Value="{DynamicResource {x:Static 
+                                    SystemColors.WindowTextBrushKey}}" />
+        </Style>
+    </Canvas.Resources>
+
+    <!-- Draw the path. -->
+    <Path Data="{StaticResource path}" />
+
+    <!-- Draw the unicycle-man. -->
+    <Path>
+        <Path.Data>
+            <GeometryGroup>
+                <!-- Wheel. -->
+                <EllipseGeometry Center="0 -25" RadiusX="25" RadiusY="25" />
+
+                <!-- Spokes -->
+                <GeometryGroup>
+                    <LineGeometry StartPoint="0 0" EndPoint="0 -50" />
+                    <LineGeometry StartPoint="-25 -25" EndPoint="25 -25" />
+                    <LineGeometry StartPoint="-18 -7" EndPoint="18 -43" />
+                    <LineGeometry StartPoint="18 -7" EndPoint="-18 -43" />
+                    <GeometryGroup.Transform>
+                        <RotateTransform x:Name="xformSpokes" 
+                                         CenterX="0" CenterY="-25" />
+                    </GeometryGroup.Transform>
+                </GeometryGroup>
+
+                <!-- Body, head, and arms. -->
+                <LineGeometry StartPoint="0 -25" EndPoint="0 -80" />
+                <EllipseGeometry Center="0 -90" RadiusX="10" RadiusY="10" />
+                <LineGeometry StartPoint="9 -85" EndPoint="0 -90" />
+                <LineGeometry StartPoint="-35 -70" EndPoint="35 -70">
+                    <LineGeometry.Transform>
+                        <RotateTransform x:Name="xformArm"
+                                         CenterX="0" CenterY="-70" />
+                    </LineGeometry.Transform>
+                </LineGeometry>
+
+            </GeometryGroup>
+        </Path.Data>
+        <Path.RenderTransform>
+            <MatrixTransform x:Name="xformUnicycleMan" />
+        </Path.RenderTransform>
+    </Path>
+
+    <Canvas.Triggers>
+        <EventTrigger RoutedEvent="Canvas.Loaded">
+            <BeginStoryboard>
+                <Storyboard SpeedRatio="0.5">
+                    <!-- Move the unicycle-man along the path. -->
+                    <MatrixAnimationUsingPath 
+                        Storyboard.TargetName="xformUnicycleMan"
+                        Storyboard.TargetProperty="Matrix"
+                        Duration="0:0:12" 
+                        PathGeometry="{StaticResource path}"
+                        DoesRotateWithTangent="True"
+                        RepeatBehavior="Forever" />
+
+                    <!-- Rotate the spokes of the wheel. -->
+                    <DoubleAnimation
+                        Storyboard.TargetName="xformSpokes"
+                        Storyboard.TargetProperty="Angle"
+                        Duration="0:0:1"
+                        RepeatBehavior="Forever"
+                        From="0" To="360" />
+
+                    <!-- Move the arms for balance. -->                    
+                    <DoubleAnimation
+                        Storyboard.TargetName="xformArm"
+                        Storyboard.TargetProperty="Angle"
+                        Duration="0:0:0.2"
+                        RepeatBehavior="Forever"
+                        AutoReverse="True"
+                        From="-20" To="20" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Canvas.Triggers>
+</Canvas>

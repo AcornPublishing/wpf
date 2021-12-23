@@ -1,0 +1,61 @@
+<!-- ===================================================
+      ResourceTemplate.xaml (c) 2006 by Charles Petzold 
+     =================================================== -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Page.Resources>
+        <ControlTemplate x:Key="btnCustom" TargetType="{x:Type Button}">
+
+            <!-- VisualTree property of ControlTemplate. -->
+    
+            <Border Name="border" BorderThickness="3" BorderBrush="Red"
+                    Background="{TemplateBinding Foreground}">
+
+                <TextBlock Name="txtblk" 
+                           FontStyle="Italic" 
+                           Text="{TemplateBinding Content}"
+                           Margin="{TemplateBinding Padding}"
+                           Foreground="{TemplateBinding Background}" />
+            </Border>
+
+            <!-- Triggers property of ControlTemplate. -->
+
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="border"
+                            Property="CornerRadius" Value="12" />
+                    <Setter TargetName="txtblk"
+                            Property="FontWeight" Value="Bold" />
+                </Trigger>
+
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter TargetName="border"
+                            Property="Background" 
+                            Value="{Binding Path=Background}" />
+                    <Setter TargetName="txtblk"
+                            Property="Foreground"
+                            Value="{Binding Path=Foreground}" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Page.Resources>
+
+    <StackPanel>
+        <Button Template="{StaticResource btnCustom}"
+                HorizontalAlignment="Center" Margin="24"
+                FontSize="24" Padding="10"  >
+            Button with Custom Template
+        </Button>
+
+        <Button HorizontalAlignment="Center" Margin="24"
+                FontSize="24" Padding="10"  >
+            Normal Button
+        </Button>
+
+        <Button Template="{StaticResource btnCustom}"
+                HorizontalAlignment="Center" Margin="24"
+                FontSize="24" Padding="10"  >
+            Another Button with Custom Template
+        </Button>
+    </StackPanel>
+</Page>

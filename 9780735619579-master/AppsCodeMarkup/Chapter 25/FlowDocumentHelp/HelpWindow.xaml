@@ -1,0 +1,78 @@
+﻿<!-- =============================================
+      HelpWindow.xaml (c) 2006 by Charles Petzold
+     ============================================= -->
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Petzold.FlowDocumentHelp.HelpWindow"
+        Title="Help" Width="600" Height="500"
+        WindowStartupLocation="CenterScreen"
+        ShowInTaskbar="False">
+    <Window.Resources>
+        <XmlDataProvider x:Key="data"
+                         Source="Help/HelpContents.xml"
+                         XPath="HelpContents" />
+       
+        <HierarchicalDataTemplate DataType="Topic"
+                                  ItemsSource="{Binding XPath=Topic}" >
+
+            <!-- Each TreeViewItem is an Image and a TextBlock. -->
+            <StackPanel Orientation="Horizontal">
+                <Image Name="img" 
+                       Source="Help/HelpImageQuestionMark.png" 
+                       Margin="2" 
+                       Stretch="None" />
+                <TextBlock Text="{Binding XPath=@Header}"
+                           FontSize="10pt" 
+                           VerticalAlignment="Center" />
+            </StackPanel>
+
+            <HierarchicalDataTemplate.Triggers>
+
+                <!-- Use closed-book image for items that have children. -->
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource 
+                                        AncestorType={x:Type TreeViewItem}}, 
+                                        Path=HasItems}"
+                             Value="True">
+                    <Setter TargetName="img" 
+                            Property="Image.Source" 
+                            Value="Help/HelpImageClosedBook.png" />
+                </DataTrigger>
+
+                <!-- Use open-book image for items that are expanded. -->
+                <DataTrigger Binding="{Binding RelativeSource={RelativeSource 
+                                        AncestorType={x:Type TreeViewItem}}, 
+                                        Path=IsExpanded}"
+                             Value="True">
+                    <Setter TargetName="img" 
+                            Property="Image.Source" 
+                            Value="Help/HelpImageOpenBook.png" />
+                </DataTrigger>
+            </HierarchicalDataTemplate.Triggers>
+        </HierarchicalDataTemplate>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="33*" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="67*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Contents TreeView on the left. -->
+        <TreeView Name="treevue"
+                  Grid.Column="0" 
+                  ItemsSource="{Binding Source={StaticResource data}, 
+                                        XPath=Topic}" 
+                  SelectedValuePath="@Source"
+                  SelectedItemChanged="TreeViewOnSelectedItemChanged" />
+
+        <!-- GridSplitter in the middle. -->
+        <GridSplitter Grid.Column="1" Width="6"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Stretch" />
+
+        <!-- Frame on the right. -->
+        <Frame Name="frame"  Grid.Column="2"
+               Navigated="FrameOnNavigated" />
+    </Grid>
+</Window>

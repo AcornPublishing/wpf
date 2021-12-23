@@ -1,0 +1,98 @@
+<!-- ================================================
+      PenProperties.xaml (c) 2006 by Charles Petzold
+     ================================================ -->
+<Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Draw the Polyline in the single-cell Grid. -->
+
+    <Polyline Margin="0.5in, 1.5in, 0, 0" 
+              Points="0 0, 500 25, 0 50"
+              VerticalAlignment="Center"
+              Stroke="Blue"
+              StrokeThickness="{Binding ElementName=sliderThickness, 
+                                        Path=Value }"
+              StrokeStartLineCap="{Binding ElementName=lstboxStartLineCap, 
+                                           Path=SelectedItem.Content}"
+              StrokeEndLineCap="{Binding ElementName=lstboxEndLineCap, 
+                                         Path=SelectedItem.Content}"
+              StrokeLineJoin="{Binding ElementName=lstboxLineJoin, 
+                                       Path=SelectedItem.Content}"
+              StrokeMiterLimit="{Binding ElementName=sliderMiterLimit, 
+                                         Path=Value }" />
+
+    <!-- Create a horizontal StackPanel in the same cell of the Grid. -->
+
+    <StackPanel Grid.Column="0"
+                Margin="0, 12, 0, 0"
+                Orientation="Horizontal" >
+
+        <!-- Define a style for the five "user-interface" groups. -->
+
+        <StackPanel.Resources>
+            <Style x:Key="uigroup">
+                <Setter Property="StackPanel.VerticalAlignment"
+                        Value="Top" />
+                <Setter Property="StackPanel.Width"
+                        Value="100" />
+                <Setter Property="StackPanel.Margin"
+                        Value="12, 0, 12, 0" />
+            </Style>
+        </StackPanel.Resources>
+
+        <!-- A Slider for the StrokeThickness property. -->
+
+        <StackPanel Style="{StaticResource uigroup}">
+            <Label Content="_Thickness" />
+            <Slider Name="sliderThickness"
+                    Minimum="0"
+                    Maximum="100"
+                    Value="24" />
+        </StackPanel>
+
+        <!-- A ListBox for the StrokeStartLineCap property. -->
+
+        <StackPanel Style="{StaticResource uigroup}">
+            <Label Content="_StartLineCap" />
+            <ListBox Name="lstboxStartLineCap">
+                <ListBoxItem Content="{x:Static PenLineCap.Flat}" />
+                <ListBoxItem Content="{x:Static PenLineCap.Square}" />
+                <ListBoxItem Content="{x:Static PenLineCap.Round}" />
+                <ListBoxItem Content="{x:Static PenLineCap.Triangle}" />
+            </ListBox>
+        </StackPanel>
+
+        <!-- A ListBox for the StrokeEndLineCap property. -->
+
+        <StackPanel Style="{StaticResource uigroup}">
+            <Label Content="_EndLineCap" />
+            <ListBox Name="lstboxEndLineCap">
+                <ListBoxItem Content="{x:Static PenLineCap.Flat}" />
+                <ListBoxItem Content="{x:Static PenLineCap.Square}" />
+                <ListBoxItem Content="{x:Static PenLineCap.Round}" />
+                <ListBoxItem Content="{x:Static PenLineCap.Triangle}" />
+            </ListBox>
+        </StackPanel>
+
+        <!-- A ListBox for the StrokeLineJoin property. -->
+
+        <StackPanel Style="{StaticResource uigroup}">
+            <Label Content="_LineJoin" />
+            <ListBox Name="lstboxLineJoin">
+                <ListBoxItem Content="{x:Static PenLineJoin.Bevel}" />
+                <ListBoxItem Content="{x:Static PenLineJoin.Round}" />
+                <ListBoxItem Content="{x:Static PenLineJoin.Miter}" />
+            </ListBox>
+        </StackPanel>
+
+        <!-- A Slider for the StrokeMiterLimit property. -->
+
+        <StackPanel Style="{StaticResource uigroup}">
+            <Label Content="_MiterLimit" />
+            <Slider Name="sliderMiterLimit"
+                    Minimum="0"
+                    Maximum="100"
+                    Value="10" />
+        </StackPanel>
+    </StackPanel>
+</Grid>

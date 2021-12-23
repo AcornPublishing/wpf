@@ -1,0 +1,69 @@
+<!-- ========================================================
+      AutoTemplateSelection.xaml (c) 2006 by Charles Petzold 
+     ======================================================== -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:s="clr-namespace:System;assembly=mscorlib">
+    <Page.Resources>
+
+        <DataTemplate DataType="{x:Type s:Int32}">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Integer: " />
+                <TextBlock Text="{Binding}" />
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type s:Double}">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Double: " />
+                <TextBlock Text="{Binding}" />
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type s:String}">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="String: " />
+                <TextBlock Text="{Binding}" />
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type s:DateTime}">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="DateTime: " />
+                <TextBlock Text="{Binding Path=Month}" />
+                <TextBlock Text="/" />
+                <TextBlock Text="{Binding Path=Day}" />
+                <TextBlock Text="/" />
+                <TextBlock Text="{Binding Path=Year}" />
+            </StackPanel>
+        </DataTemplate>
+
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="12" />
+            <Setter Property="FontSize" Value="12pt" />
+            <Setter Property="Padding" Value="10" />
+        </Style>
+
+    </Page.Resources>
+
+    <StackPanel>
+        <Button>
+            <s:Int32>
+                27
+            </s:Int32>
+        </Button>
+
+        <Button>
+            <s:Double>27.543</s:Double>
+        </Button>
+
+        <Button>
+            27.543
+        </Button>
+
+        <Button>
+            <x:Static Member="s:DateTime.Now" />
+        </Button>
+    </StackPanel>
+</Page>

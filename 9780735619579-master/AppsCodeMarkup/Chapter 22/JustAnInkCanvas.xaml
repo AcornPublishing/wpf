@@ -1,0 +1,4 @@
+<!-- ==================================================
+      JustAnInkCanvas.xaml (c) 2006 by Charles Petzold
+     ================================================== -->
+<InkCanvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" />

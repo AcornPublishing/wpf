@@ -1,0 +1,14 @@
+<!-- ======================================================
+      PropertyInheritance.xaml (c) 2006 by Charles Petzold
+     ====================================================== -->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            HorizontalAlignment="Center"
+            TextBlock.FontSize="16pt"
+            TextBlock.Foreground="Blue" >
+    <TextBlock>
+        Just a TextBlock
+    </TextBlock>
+    <Button>
+        Just a Button
+    </Button>
+</StackPanel>

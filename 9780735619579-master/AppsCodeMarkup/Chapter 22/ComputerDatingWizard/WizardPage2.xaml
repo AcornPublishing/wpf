@@ -1,0 +1,51 @@
+﻿<!-- ==============================================
+      WizardPage2.xaml (c) 2006 by Charles Petzold
+     ============================================== -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      x:Class="Petzold.ComputerDatingWizard.WizardPage2">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+    
+        <!-- TextBox for favorite operating system. -->
+        <TextBlock Grid.Row="0" Margin="0, 12, 0, 0">
+            Favorite operating system:
+        </TextBlock>
+        <TextBox Grid.Row="1" Name="txtboxFavoriteOS"
+                 Text="Microsoft Windows Vista, of course!" />
+
+        <!-- TextBox for favorite disk directory. -->
+        <TextBlock Grid.Row="2" Margin="0, 12, 0, 0">
+            Favorite disk directory:
+        </TextBlock>
+        <TextBox Grid.Row="3" Name="txtboxFavoriteDir"
+                 Text="C:\"/>
+        <Button Grid.Row="4" Click="BrowseButtonOnClick" 
+                HorizontalAlignment="Right" 
+                MinWidth="72" Margin="0, 2, 0, 0"
+                Content="Browse..." />
+
+        <!-- Navigation buttons at bottom-right corner of page. -->
+        <Grid Grid.Row="6">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Click="PreviousButtonOnClick" 
+                    MinWidth="72" Margin="6"
+                    Content="&lt; Previous" />
+            <Button Grid.Column="2" Click="NextButtonOnClick" 
+                    MinWidth="72" Margin="6"
+                    Content="Next &gt;" />
+        </Grid>
+    </Grid>
+</Page>

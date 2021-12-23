@@ -1,0 +1,11 @@
+<!-- ==============================================
+      HelpContents.xml (c) 2006 by Charles Petzold
+     ============================================== -->
+<HelpContents xmlns="">
+    <Topic Header="Copyright Information" Source="Help/Copyright.xaml" />
+    <Topic Header="Program Overview" Source="Help/Overview.xaml" />
+    <Topic Header="The Menu">
+        <Topic Header="The File Menu" Source="Help/FileMenu.xaml" />
+        <Topic Header="The Help Menu" Source="Help/HelpMenu.xaml" />
+    </Topic>
+</HelpContents>

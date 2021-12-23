@@ -1,0 +1,16 @@
+﻿<!-- =====================================================
+      UseCustomXamlClass.xaml (c) 2006 by Charles Petzold
+     ===================================================== -->
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:src="clr-namespace:Petzold.UseCustomXamlClass" 
+        x:Class="Petzold.UseCustomXamlClass.UseCustomXamlClass"
+        Title = "Use Custom XAML Class">
+    <StackPanel Name="stack">
+        <src:CenteredButton>Button A</src:CenteredButton>
+        <src:CenteredButton>Button B</src:CenteredButton>
+        <src:CenteredButton>Button C</src:CenteredButton>
+        <src:CenteredButton>Button D</src:CenteredButton>
+        <src:CenteredButton>Button E</src:CenteredButton>
+    </StackPanel>
+</Window>

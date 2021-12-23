@@ -1,0 +1,24 @@
+<!-- ===================================================
+      Overview.xaml (c) 2006 by Charles Petzold
+     =================================================== -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+              Title="Program Overview">
+    <FlowDocumentReader>
+        <FlowDocument>
+            <Paragraph Style="{StaticResource Header}">
+                Program Overview
+            </Paragraph>
+            <Paragraph>
+                This file presents an overview of the program.
+            </Paragraph>
+            <Paragraph>
+                The description is probably several paragraphs in length.
+                Perhaps it makes reference to the 
+                <Hyperlink NavigateUri="FileMenu.xaml">File Menu</Hyperlink>
+                and
+                <Hyperlink NavigateUri="HelpMenu.xaml">Help Menu</Hyperlink>.
+            </Paragraph>
+        </FlowDocument>
+    </FlowDocumentReader>
+</Page>

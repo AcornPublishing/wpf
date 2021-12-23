@@ -1,0 +1,13 @@
+﻿<!-- ===========================================================
+      UseCommonResourcesWindow.xaml (c) 2006 by Charles Petzold
+     =========================================================== -->
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        Title="Use Common Resources"
+        Background="{StaticResource brushLinear}">
+    <Button FontSize="96pt"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center" 
+            Background="{StaticResource brushRadial}">
+        Button
+    </Button>
+</Window>

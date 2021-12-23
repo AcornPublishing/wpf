@@ -1,0 +1,32 @@
+<!-- ========================================
+      Diner2.xaml (c) 2006 by Charles Petzold
+     ======================================== -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid TextBlock.FontSize="192">
+        <TextBlock Name="txtblk" Foreground="Black"
+                   HorizontalAlignment="Center" VerticalAlignment="Center" />
+    </Grid> 
+
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="Canvas.Loaded">
+            <BeginStoryboard>
+                <Storyboard TargetName="txtblk" Duration="0:0:2"
+                            RepeatBehavior="Forever">
+
+                    <StringAnimationUsingKeyFrames 
+                                Storyboard.TargetProperty="Text">
+                        <DiscreteStringKeyFrame KeyTime="0:0:0" Value="EAT" />
+                        <DiscreteStringKeyFrame KeyTime="0:0:1" Value="HERE" />
+                    </StringAnimationUsingKeyFrames>
+
+                    <ColorAnimationUsingKeyFrames 
+                                Storyboard.TargetProperty="Foreground.Color">
+                        <DiscreteColorKeyFrame KeyTime="0:0:0" Value="Red" />
+                        <DiscreteColorKeyFrame KeyTime="0:0:1" Value="Blue" />
+                    </ColorAnimationUsingKeyFrames>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Page.Triggers>
+</Page>

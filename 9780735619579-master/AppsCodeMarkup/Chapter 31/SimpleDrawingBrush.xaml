@@ -1,0 +1,24 @@
+<!-- =====================================================
+      SimpleDrawingBrush.xaml (c) 2006 by Charles Petzold
+     ===================================================== -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Page.Background>
+        <DrawingBrush>
+            <DrawingBrush.Drawing>
+                <GeometryDrawing Brush="Red">
+
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="Blue" />
+                    </GeometryDrawing.Pen>
+
+                    <GeometryDrawing.Geometry>
+                        <EllipseGeometry Center="0 0" RadiusX="10" 
+                                                      RadiusY="10" />
+                    </GeometryDrawing.Geometry>
+
+                </GeometryDrawing>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+    </Page.Background>
+</Page>

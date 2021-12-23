@@ -1,0 +1,31 @@
+<!-- ====================================================
+      SetterWithBinding.xaml (c) 2006 by Charles Petzold
+     ==================================================== -->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel.Resources>
+        <Style TargetType="{x:Type Button}">
+
+            <Setter Property="FontSize" 
+                Value="{Binding ElementName=scroll, Path=Value}" />
+
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="24" />
+        </Style>
+    </StackPanel.Resources>
+
+    <ScrollBar Name="scroll" Orientation="Horizontal" Margin="24"
+               Minimum="11" Maximum="100" Value="24" />
+
+    <Button>
+        Button Number 1
+    </Button>
+
+    <Button>
+        Button Number 2
+    </Button>
+
+    <Button>
+        Button Number 3
+    </Button>
+</StackPanel>

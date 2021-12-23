@@ -1,0 +1,62 @@
+<!-- ================================================
+      YellowPadHelp.xaml (c) 2006 by Charles Petzold
+     ================================================ -->
+<NavigationWindow 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Petzold.YellowPad.YellowPadHelp"
+        Title="YellowPad Help"
+        Width="800" Height="600" 
+        ShowInTaskbar="False"
+        WindowStartupLocation="CenterScreen">
+    <NavigationWindow.Content>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="75*" />
+            </Grid.ColumnDefinitions>
+
+            <TreeView Name="tree" FontSize="10pt" 
+                      SelectedItemChanged="HelpOnSelectedItemChanged">
+                <TreeViewItem Header="Program Overview" 
+                              Tag="Help/Overview.xaml" />
+
+                <TreeViewItem Header="Exploring the Menus">
+                    <TreeViewItem Header="The File Menu"
+                                  Tag="Help/FileMenu.xaml" />
+
+                    <TreeViewItem Header="The Edit Menu"
+                                  Tag="Help/EditMenu.xaml" />
+
+                    <TreeViewItem Header="The Stylus-Mode Menu"
+                                  Tag="Help/StylusModeMenu.xaml" />
+
+                    <TreeViewItem Header="The Eraser-Mode Menu"
+                                  Tag="Help/EraserModeMenu.xaml" />
+
+                    <TreeViewItem Header="The Tools Menu"
+                                  Tag="Help/ToolsMenu.xaml">
+
+                        <TreeViewItem Header="The Stylus Tool Dialog"
+                                      Tag="Help/StylusToolDialog.xaml" />
+
+                        <TreeViewItem Header="The Eraser Tool Dialog"
+                                      Tag="Help/EraserToolDialog.xaml" />
+                    </TreeViewItem>
+
+                    <TreeViewItem Header="The Help Menu"
+                                  Tag="Help/HelpMenu.xaml" />
+                </TreeViewItem>
+                <TreeViewItem Header="Copyright Information" 
+                              Tag="Help/Copyright.xaml" />
+            </TreeView>
+            
+            <GridSplitter Grid.Column="1" Width="6" 
+                          HorizontalAlignment="Center" 
+                          VerticalAlignment="Stretch" />
+        
+            <Frame Name="frame" Grid.Column="2" />
+        </Grid>
+    </NavigationWindow.Content>
+</NavigationWindow>

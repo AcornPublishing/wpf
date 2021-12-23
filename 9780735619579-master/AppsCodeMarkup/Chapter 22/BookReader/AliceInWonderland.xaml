@@ -1,0 +1,29 @@
+<!-- ========================
+      AliceInWonderland.xaml
+     ======================== -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      Title="Alice's Adventures in Wonderland">
+    <StackPanel TextBlock.FontSize="10pt">
+        <TextBlock Margin="12 12 12 6">
+            <Hyperlink NavigateUri="AliceChapter01.xaml"
+                       TargetName="frameChapter">
+                Chapter I
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock Margin="12 6 12 6">
+            <Hyperlink NavigateUri="AliceChapter02.xaml"
+                       TargetName="frameChapter">
+                Chapter II
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock Margin="12 6 12 6">
+            <Hyperlink NavigateUri="AliceChapter03.xaml"
+                       TargetName="frameChapter">
+                Chapter III
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock Margin="12 6 12 6">
+            ...
+        </TextBlock>
+    </StackPanel>
+</Page>

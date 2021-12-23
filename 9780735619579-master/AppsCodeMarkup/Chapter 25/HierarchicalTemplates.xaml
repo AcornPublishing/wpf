@@ -1,0 +1,84 @@
+<!-- ========================================================
+      HierarchicalTemplates.xaml (c) 2006 by Charles Petzold 
+     ======================================================== -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Authors and Their Books">
+    <Page.Resources>
+
+        <!-- XML data. -->
+        <XmlDataProvider x:Key="data" XPath="Authors">
+            <x:XData>
+                <Authors xmlns="">
+                    <Author Name="Jane Austen">
+                        <BirthDate>1775</BirthDate>
+                        <DeathDate>1817</DeathDate>
+                        <Books>
+                            <Book Title="Sense and Sensibility">
+                                <PubDate>1811</PubDate>
+                            </Book>
+                            <Book Title="Pride and Prejudice">
+                                <PubDate>1813</PubDate>
+                            </Book>
+                        </Books>
+                    </Author>
+                    <Author Name="George Eliot">
+                        <BirthDate>1819</BirthDate>
+                        <DeathDate>1880</DeathDate>
+                        <Books>
+                            <Book Title="Adam Bede">
+                                <PubDate>1859</PubDate>
+                            </Book>
+                        </Books>
+                        <Books>
+                            <Book Title="Middlemarch">
+                                <PubDate>1872</PubDate>
+                            </Book>
+                        </Books>
+                    </Author>
+                    <Author Name="Anthony Trollope">
+                        <BirthDate>1815</BirthDate>
+                        <DeathDate>1882</DeathDate>
+                        <Books>
+                            <Book Title="Barchester Towers">
+                                <PubDate>1857</PubDate>
+                            </Book>
+                            <Book Title="The Way We Live Now">
+                                <PubDate>1875</PubDate>
+                            </Book>
+                        </Books>
+                    </Author>
+                </Authors>
+            </x:XData>
+        </XmlDataProvider>
+
+        <!-- Template for Author elements. -->
+        <HierarchicalDataTemplate DataType="Author"
+                                  ItemsSource="{Binding XPath=Books/Book}">
+            <StackPanel Orientation="Horizontal"
+                        TextBlock.FontSize="12pt">
+                <TextBlock Text="{Binding XPath=@Name}" />
+                <TextBlock Text=" (" />
+                <TextBlock Text="{Binding XPath=BirthDate}" />
+                <TextBlock Text="-" />
+                <TextBlock Text="{Binding XPath=DeathDate}" />
+                <TextBlock Text=")" />
+            </StackPanel>
+        </HierarchicalDataTemplate>
+
+        <!-- Template for Book elements. -->
+        <HierarchicalDataTemplate DataType="Book">
+            <StackPanel Orientation="Horizontal"
+                        TextBlock.FontSize="10pt">
+                <TextBlock Text="{Binding XPath=@Title}" />
+                <TextBlock Text=" (" />
+                <TextBlock Text="{Binding XPath=PubDate}" />
+                <TextBlock Text=")" />
+            </StackPanel>
+        </HierarchicalDataTemplate>
+    </Page.Resources>
+
+    <!-- The TreeView control. -->
+    <TreeView ItemsSource="{Binding Source={StaticResource data},
+                                    XPath=Author}" />
+</Page>

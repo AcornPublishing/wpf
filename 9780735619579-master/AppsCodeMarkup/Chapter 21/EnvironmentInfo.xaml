@@ -1,0 +1,32 @@
+<!-- ==================================================
+      EnvironmentInfo.xaml (c) 2006 by Charles Petzold
+     ================================================== -->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:s="clr-namespace:System;assembly=mscorlib">
+    <TextBlock>
+        <Label Content="Operating System Version: " />  
+        <Label Content="{x:Static s:Environment.OSVersion}" />
+        <LineBreak />
+        <Label Content=".NET Version: " />
+        <Label Content="{x:Static s:Environment.Version}" />
+        <LineBreak />
+        <Label Content="Machine Name: " />
+        <Label Content="{x:Static s:Environment.MachineName}" />
+        <LineBreak />
+        <Label Content="User Name: " />
+        <Label Content="{x:Static s:Environment.UserName}" />
+        <LineBreak />
+        <Label Content="User Domain Name: " />
+        <Label Content="{x:Static s:Environment.UserDomainName}" />
+        <LineBreak />
+        <Label Content="System Directory: " />
+        <Label Content="{x:Static s:Environment.SystemDirectory}" />
+        <LineBreak />
+        <Label Content="Current Directory: " />
+        <Label Content="{x:Static s:Environment.CurrentDirectory}" />
+        <LineBreak />
+        <Label Content="Command Line: " />
+        <Label Content="{x:Static s:Environment.CommandLine}" />
+    </TextBlock>
+</StackPanel>

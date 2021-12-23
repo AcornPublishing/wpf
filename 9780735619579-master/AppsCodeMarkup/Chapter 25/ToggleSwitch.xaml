@@ -1,0 +1,54 @@
+<!-- ===============================================
+      ToggleSwitch.xaml (c) 2006 by Charles Petzold
+     =============================================== -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Page.Resources>
+        <ControlTemplate x:Key="switch" TargetType="{x:Type CheckBox}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Border Width="96" Height="48"
+                        BorderBrush="Black" BorderThickness="1">
+                    <Canvas Background="LightGray">
+                        <TextBlock Canvas.Left="0" Canvas.Top="0"
+                                   Foreground="Black"
+                                   Text="Off" Margin="2" />
+                        <TextBlock Canvas.Right="0" Canvas.Top="0"
+                                   Foreground="Black"
+                                   Text="On" Margin="2" />
+                        <Line Name="lineOff"
+                              StrokeThickness="8" Stroke="Black"
+                              X1="48" Y1="40" X2="20" Y2="16"
+                              StrokeStartLineCap="Round"
+                              StrokeEndLineCap="Round"  />
+                        <Line Name="lineOn"
+                              StrokeThickness="8" Stroke="Black"
+                              X1="48" Y1="40" X2="76" Y2="16"
+                              StrokeStartLineCap="Round"
+                              StrokeEndLineCap="Round" 
+                              Visibility="Hidden"  />
+                    </Canvas>
+                </Border>
+                <ContentPresenter Grid.Row="1" 
+                                  Content="{TemplateBinding Content}"
+                                  HorizontalAlignment="Center" /> 
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter TargetName="lineOff" Property="Visibility"
+                            Value="Hidden" />
+                    <Setter TargetName="lineOn" Property="Visibility"
+                            Value="Visible" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Page.Resources>
+
+    <CheckBox Template="{StaticResource switch}"
+              Content="Master Switch"
+              HorizontalAlignment="Center"
+              VerticalAlignment="Center" />
+</Page>

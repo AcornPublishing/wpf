@@ -1,0 +1,58 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1BF6BFBE-CB2F-4457-A7BF-7FAD807D7268}</ProjectGuid>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <RootNamespace>MultiRecordDataEntry</RootNamespace>
+    <AssemblyName>MultiRecordDataEntry</AssemblyName>
+    <WarningLevel>4</WarningLevel>
+    <OutputType>exe</OutputType>
+    <ApplicationVersion>1.0.0.*</ApplicationVersion>
+    <!-- Most people will use Publish dialog in Visual Studio to increment this -->
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Chapter 25\CreateDatePicker\DatePicker.cs">
+      <Link>DatePicker.cs</Link>
+    </Compile>
+    <Compile Include="..\SingleRecordDataEntry\Person.cs">
+      <Link>Person.cs</Link>
+    </Compile>
+    <Compile Include="..\SingleRecordDataEntry\PersonPanel.cs">
+      <Link>PersonPanel.cs</Link>
+    </Compile>
+    <Compile Include="MultiRecordDataEntry.cs" />
+    <Compile Include="People.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="..\..\Chapter 25\CreateDatePicker\DatePicker.xaml">
+      <Link>DatePicker.xaml</Link>
+    </Page>
+    <Page Include="..\SingleRecordDataEntry\PersonPanel.xaml">
+      <Link>PersonPanel.xaml</Link>
+    </Page>
+    <Page Include="MultiRecordDataEntry.xaml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildBinPath)\Microsoft.WinFX.targets" />
+</Project>

@@ -1,0 +1,22 @@
+<!-- ===============
+      BookList.xaml
+     ===============-->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <WrapPanel TextBlock.FontSize="10pt">
+        <TextBlock Margin="12">
+            <Hyperlink NavigateUri="AliceInWonderland.xaml"
+                       TargetName="frameContents">
+                <Italic>Alice's Adventures in Wonderland</Italic> by Lewis Carroll
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock Margin="12">
+            <Hyperlink NavigateUri="ThroughTheLookingGlass.xaml"
+                       TargetName="frameContents">
+                <Italic>Through the Looking-Glass</Italic> by Lewis Carroll
+            </Hyperlink>
+        </TextBlock>
+        <TextBlock Margin="12">
+            ...
+        </TextBlock>
+    </WrapPanel>
+</Page>

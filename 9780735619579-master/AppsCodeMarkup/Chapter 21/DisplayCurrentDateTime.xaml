@@ -1,0 +1,11 @@
+<!-- =========================================================
+      DisplayCurrentDateTime.xaml (c) 2006 by Charles Petzold 
+     ========================================================= -->
+<Label xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+       xmlns:s="clr-namespace:System;assembly=mscorlib"
+       HorizontalAlignment="Center"
+       VerticalAlignment="Center"
+       FontSize="48"
+       Content="{x:Static s:DateTime.Now}" 
+       Foreground="{x:Static SystemColors.ActiveCaptionBrush}" />

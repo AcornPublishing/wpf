@@ -1,0 +1,37 @@
+<!-- ========================================================
+      AnimatedTextTransform.xaml (c) 2006 by Charles Petzold 
+     ======================================================== -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <TextBlock Text="XAML" FontSize="144pt" FontFamily="Arial Black"
+               HorizontalAlignment="Center" VerticalAlignment="Center"
+               RenderTransformOrigin="0.5 0.5">
+
+        <TextBlock.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform x:Name="xformScale" />
+                <RotateTransform x:Name="xformRotate" />
+            </TransformGroup>
+        </TextBlock.RenderTransform>
+
+        <TextBlock.Triggers>
+            <EventTrigger RoutedEvent="TextBlock.Loaded">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation Storyboard.TargetName="xformScale"
+                                         Storyboard.TargetProperty="ScaleX"
+                                         From="1" To="-1" Duration="0:0:3" 
+                                         AutoReverse="True"
+                                         RepeatBehavior="Forever" />
+
+                        <DoubleAnimation Storyboard.TargetName="xformRotate"
+                                         Storyboard.TargetProperty="Angle"
+                                         From="0" To="360" Duration="0:0:5" 
+                                         RepeatBehavior="Forever" />
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </TextBlock.Triggers>
+    </TextBlock>
+</Page>

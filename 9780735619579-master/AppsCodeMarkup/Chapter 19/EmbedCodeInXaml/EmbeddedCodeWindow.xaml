@@ -1,0 +1,58 @@
+﻿<!-- =====================================================
+      EmbeddedCodeWindow.xaml (c) 2006 by Charles Petzold
+     ===================================================== -->
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Petzold.CompileXamlOnly.EmbeddedCodeWindow"
+        Title="Embed Code in XAML"
+        SizeToContent="WidthAndHeight"
+        ResizeMode="CanMinimize"
+        Loaded="WindowOnLoaded">
+    <StackPanel>
+
+        <Button HorizontalAlignment="Center"
+                Margin="24"
+                Click="ButtonOnClick">
+            Click the Button
+        </Button>
+
+        <Ellipse Name="elips" 
+                 Width="200"
+                 Height="100"
+                 Margin="24" 
+                 Stroke="Red"
+                 StrokeThickness="10" />
+
+        <ListBox Name="lstbox" 
+                 Width="150"
+                 Height="150"
+                 Margin="24"
+                 SelectionChanged="ListBoxOnSelection" />
+
+        <x:Code>
+            <![CDATA[
+        void WindowOnLoaded(object sender, RoutedEventArgs args)
+        {
+            foreach (System.Reflection.PropertyInfo prop in 
+                                      typeof(Brushes).GetProperties())
+                lstbox.Items.Add(prop.Name);
+        }
+        void ButtonOnClick(object sender, RoutedEventArgs args)
+        {
+            Button btn = sender as Button;
+            MessageBox.Show("The button labeled '" +
+                            btn.Content + 
+                            "' has been clicked.");
+        }
+        void ListBoxOnSelection(object sender, SelectionChangedEventArgs args)
+        {
+            string strItem = lstbox.SelectedItem as string;
+            System.Reflection.PropertyInfo prop = 
+                                    typeof(Brushes).GetProperty(strItem);
+            elips.Fill = (Brush)prop.GetValue(null, null);
+        }
+            ]]>
+        </x:Code>
+
+    </StackPanel>
+</Window>

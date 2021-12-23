@@ -1,0 +1,16 @@
+<!-- =========================================================
+      EllipseWithStyledLines.xaml (c) 2006 by Charles Petzold
+     ========================================================= -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      WindowTitle="Ellipse with Styled Lines">
+    <Ellipse Margin="0.5in"
+             Fill="Blue"
+             Stroke="Red"
+             StrokeDashArray="{Binding Source={x:Static DashStyles.Dot}, 
+                                       Path=Dashes,
+                                       Mode=OneTime}"
+             StrokeThickness="36pt"
+             StrokeDashCap="Round">
+    </Ellipse>
+</Page>

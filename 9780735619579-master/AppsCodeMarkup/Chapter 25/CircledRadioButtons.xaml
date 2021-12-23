@@ -1,0 +1,46 @@
+<!-- ======================================================
+      CircledRadioButtons.xaml (c) 2006 by Charles Petzold 
+     ====================================================== -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Page.Resources>
+        <ControlTemplate x:Key="newradio" 
+                         TargetType="{x:Type RadioButton}">
+            <Border Name="border"
+                    BorderBrush="{DynamicResource 
+                        {x:Static SystemColors.ControlTextBrushKey}}"
+                    Padding="10"
+                    CornerRadius="100">
+                <ContentPresenter />
+            </Border>
+
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter TargetName="border"
+                            Property="BorderThickness"
+                            Value="1" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+    </Page.Resources>
+
+    <GroupBox Header="Options" FontSize="12pt"
+              HorizontalAlignment="Center" 
+              VerticalAlignment="Center">
+        <StackPanel>
+            <RadioButton Template="{StaticResource newradio}"
+                         HorizontalAlignment="Center" 
+                         Content="RadioButton 1" />
+            <RadioButton Template="{StaticResource newradio}"
+                         HorizontalAlignment="Center"
+                         Content="RadioButton 2"
+                         IsChecked="True" />
+            <RadioButton Template="{StaticResource newradio}"
+                         HorizontalAlignment="Center"
+                         Content="RadioButton 3" />
+            <RadioButton Template="{StaticResource newradio}"
+                         HorizontalAlignment="Center"
+                         Content="RadioButton 4" />
+        </StackPanel>
+    </GroupBox>
+</Page>

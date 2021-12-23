@@ -1,0 +1,64 @@
+<!-- ====================================================
+      ReflectedControls.xaml (c) 2006 by Charles Petzold
+     ==================================================== -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Page.Resources>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="VerticalAlignment" Value="Bottom" />
+            <Setter Property="FontFamily" Value="Lucida Calligraphy" />
+            <Setter Property="FontSize" Value="36" />
+        </Style>
+
+        <Style TargetType="{x:Type CheckBox}">
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="Margin" Value="12" />
+        </Style>
+    </Page.Resources>
+
+    <!-- StackPanel for controls and their reflections. -->
+    <StackPanel>
+
+        <!-- StackPanel for controls. -->
+        <StackPanel Name="pnlControls" Orientation="Horizontal" 
+                    HorizontalAlignment="Center">
+
+            <TextBlock Text="Check..." />
+
+            <StackPanel HorizontalAlignment="Center">
+                <CheckBox Content="CheckBox 1" />
+                <CheckBox Content="CheckBox 2" />
+                <CheckBox Content="CheckBox 3" />
+            </StackPanel>
+
+            <TextBlock Text="...Boxes" />
+
+        </StackPanel>
+
+        <!-- StackPanel for reflection. -->
+        <StackPanel Height="{Binding ElementName=pnlControls, 
+                                     Path=ActualHeight}">
+
+            <!-- VisualBrush inverts image of controls. -->
+            <StackPanel.Background>
+                <VisualBrush Visual="{Binding ElementName=pnlControls}"
+                             Stretch="None">
+                    <VisualBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform ScaleX="1" ScaleY="-1" />
+                            <TranslateTransform Y="1" />
+                        </TransformGroup>
+                    </VisualBrush.RelativeTransform>
+                </VisualBrush>
+            </StackPanel.Background>
+
+            <!-- OpacityMask makes it fade out. -->
+            <StackPanel.OpacityMask>
+                <LinearGradientBrush StartPoint="0 0" EndPoint="0 1">
+                    <GradientStop Offset="0" Color="#80000000" />
+                    <GradientStop Offset="1" Color="#00000000" />
+                </LinearGradientBrush>
+            </StackPanel.OpacityMask>
+        </StackPanel>
+    </StackPanel>
+</Page>

@@ -1,0 +1,5 @@
+﻿<!-- ======================================================
+      EnvironmentInfo2App.xaml (c) 2006 by Charles Petzold
+     ====================================================== -->
+<Application xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             StartupUri="EnvironmentInfo2Window.xaml" />

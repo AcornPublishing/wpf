@@ -1,0 +1,37 @@
+<!-- =======================================================
+      StyleWithDataTrigger.xaml (c) 2006 by Charles Petzold
+     ======================================================= -->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="FontSize" Value="24" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="Margin" Value="24" />
+
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding ElementName=txtbox, 
+                                               Path=Text.Length}"
+                             Value="0">
+                    <Setter Property="IsEnabled" Value="False" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </StackPanel.Resources>
+
+    <TextBox Name="txtbox" HorizontalAlignment="Center" 
+             Width="2in" Margin="24" />
+
+    <Button>
+        Button Number 1
+    </Button>
+
+    <Button>
+        Button Number 2
+    </Button>
+
+    <Button>
+        Button Number 3
+    </Button>
+
+</StackPanel>

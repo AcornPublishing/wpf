@@ -1,0 +1,84 @@
+<!-- ====================================================
+      SquaringTheCircle.xaml (c) 2006 by Charles Petzold 
+     ==================================================== -->
+<Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        RenderTransform="2 0 0 -2 300 300">
+
+    <Path StrokeThickness="3" Stroke="Blue" Fill="AliceBlue">
+        <Path.Data>
+            <PathGeometry>
+                <PathFigure x:Name="bez1" IsClosed="True">
+                    <BezierSegment x:Name="bez2" />
+                    <BezierSegment x:Name="bez3" />
+                    <BezierSegment x:Name="bez4" />
+                    <BezierSegment x:Name="bez5" />
+                </PathFigure>
+                <PathGeometry.Transform>
+                    <RotateTransform Angle="45" />
+                </PathGeometry.Transform>
+            </PathGeometry>
+        </Path.Data>
+    </Path>
+
+    <Canvas.Triggers>
+        <EventTrigger RoutedEvent="Canvas.Loaded">
+            <BeginStoryboard>
+                <Storyboard RepeatBehavior="Forever" AutoReverse="True" >
+                    <PointAnimation Storyboard.TargetName="bez1"
+                                    Storyboard.TargetProperty="StartPoint"
+                                    From="0 100" To="0 125" />
+
+                    <PointAnimation Storyboard.TargetName="bez2"
+                                    Storyboard.TargetProperty="Point1"
+                                    From="55 100" To="62.5 62.5" />
+
+                    <PointAnimation Storyboard.TargetName="bez2"
+                                    Storyboard.TargetProperty="Point2"
+                                    From="100 55" To="62.5 62.5" />
+
+                    <PointAnimation Storyboard.TargetName="bez2"
+                                    Storyboard.TargetProperty="Point3"
+                                    From="100 0" To="125 0" />
+
+                    <PointAnimation Storyboard.TargetName="bez3"
+                                    Storyboard.TargetProperty="Point1"
+                                    From="100 -55" To="62.5 -62.5" />
+
+                    <PointAnimation Storyboard.TargetName="bez3"
+                                    Storyboard.TargetProperty="Point2"
+                                    From="55 -100" To="62.5 -62.5" />
+
+                    <PointAnimation Storyboard.TargetName="bez3"
+                                    Storyboard.TargetProperty="Point3"
+                                    From="0 -100" To="0 -125" />
+
+                    <PointAnimation Storyboard.TargetName="bez4"
+                                    Storyboard.TargetProperty="Point1"
+                                    From="-55 -100" To="-62.5 -62.5" />
+
+                    <PointAnimation Storyboard.TargetName="bez4"
+                                    Storyboard.TargetProperty="Point2"
+                                    From="-100 -55" To="-62.5 -62.5" />
+
+                    <PointAnimation Storyboard.TargetName="bez4"
+                                    Storyboard.TargetProperty="Point3"
+                                    From="-100 0" To="-125 0" />
+
+                    <PointAnimation Storyboard.TargetName="bez5"
+                                    Storyboard.TargetProperty="Point1"
+                                    From="-100 55" To="-62.5 62.5" />
+
+                    <PointAnimation Storyboard.TargetName="bez5"
+                                    Storyboard.TargetProperty="Point2"
+                                    From="-55 100" To="-62.5 62.5" />
+
+                    <PointAnimation Storyboard.TargetName="bez5"
+                                    Storyboard.TargetProperty="Point3"
+                                    From="0 100" To="0 125" />
+
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Canvas.Triggers>
+</Canvas>

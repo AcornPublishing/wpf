@@ -1,0 +1,70 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2C213727-7C84-4417-AF19-13C324469A0B}</ProjectGuid>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <RootNamespace>ComputerDatingWizard</RootNamespace>
+    <AssemblyName>ComputerDatingWizard</AssemblyName>
+    <WarningLevel>4</WarningLevel>
+    <OutputType>exe</OutputType>
+    <ApplicationVersion>1.0.0.*</ApplicationVersion>
+    <!-- Most people will use Publish dialog in Visual Studio to increment this -->
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Chapter 16\RecurseDirectoriesIncrementally\DirectoryTreeView.cs">
+      <Link>DirectoryTreeView.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Chapter 16\RecurseDirectoriesIncrementally\DirectoryTreeViewItem.cs">
+      <Link>DirectoryTreeViewItem.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Chapter 16\RecurseDirectoriesIncrementally\ImagedTreeViewItem.cs">
+      <Link>ImagedTreeViewItem.cs</Link>
+    </Compile>
+    <Compile Include="DirectoryPage.cs" />
+    <Compile Include="Vitals.cs" />
+    <Compile Include="WizardPage0.cs" />
+    <Compile Include="WizardPage1.cs" />
+    <Compile Include="WizardPage2.cs" />
+    <Compile Include="ComputerDatingWizard.cs" />
+    <Compile Include="WizardPage3.cs" />
+    <Compile Include="WizardPage4.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="ComputerDatingWizard.xaml" />
+    <Page Include="DirectoryPage.xaml" />
+    <Page Include="WizardPage0.xaml" />
+    <Page Include="WizardPage1.xaml" />
+    <Page Include="WizardPage2.xaml" />
+    <Page Include="WizardPage3.xaml" />
+    <Page Include="WizardPage4.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\35FLOPPY.BMP" />
+    <Resource Include="Images\CDDRIVE.BMP" />
+    <Resource Include="Images\CLSDFOLD.BMP" />
+    <Resource Include="Images\DRIVE.bmp" />
+    <Resource Include="Images\OPENFOLD.BMP" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildBinPath)\Microsoft.WinFX.targets" />
+</Project>

@@ -1,0 +1,82 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5C5FAFC2-7E5C-4E53-9058-9E39F3E765EA}</ProjectGuid>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <RootNamespace>YellowPad</RootNamespace>
+    <AssemblyName>YellowPad</AssemblyName>
+    <WarningLevel>4</WarningLevel>
+    <OutputType>WinExe</OutputType>
+    <!-- Most people will use Publish dialog in Visual Studio to increment this -->
+    <ApplicationIcon>YellowPad.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.XML" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\Chapter 13\ListColorsElegantly\ColorListBox.cs">
+      <Link>ColorListBox.cs</Link>
+    </Compile>
+    <Compile Include="..\..\Chapter 13\ListColorsElegantly\ColorListBoxItem.cs">
+      <Link>ColorListBoxItem.cs</Link>
+    </Compile>
+    <Compile Include="YellowPadAboutDialog.cs" />
+    <Compile Include="EraserToolDialog.cs" />
+    <Compile Include="StylusToolDialog.cs" />
+    <Compile Include="YellowPadHelp.cs" />
+    <Compile Include="YellowPadWindow.cs" />
+    <Compile Include="YellowPadWindow.Edit.cs" />
+    <Compile Include="YellowPadWindow.File.cs" />
+    <Compile Include="YellowPadWindow.Help.cs" />
+    <Compile Include="YellowPadWindow.Mode.cs" />
+    <Compile Include="YellowPadWindow.Tools.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Help\Copyright.xaml" />
+    <Page Include="Help\EditMenu.xaml" />
+    <Page Include="Help\EraserModeMenu.xaml" />
+    <Page Include="Help\EraserToolDialog.xaml" />
+    <Page Include="Help\FileMenu.xaml" />
+    <Page Include="Help\Overview.xaml" />
+    <Page Include="Help\HelpMenu.xaml" />
+    <Page Include="Help\StylusModeMenu.xaml" />
+    <Resource Include="Help\ToolsMenu.xaml" />
+    <Resource Include="Images\Signature.xaml" />
+    <Page Include="Help\StylusToolDialog.xaml" />
+    <Page Include="StylusToolDialog.xaml" />
+    <Page Include="YellowPadAboutDialog.xaml" />
+    <Page Include="YellowPadHelp.xaml" />
+    <Page Include="YellowPadWindow.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\BookCover.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Help\EraserToolDialog.png" />
+    <Resource Include="Help\FormatSelectionDialog.png" />
+    <Resource Include="Help\StylusToolDialog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="YellowPad.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildBinPath)\Microsoft.WinFX.targets" />
+</Project>

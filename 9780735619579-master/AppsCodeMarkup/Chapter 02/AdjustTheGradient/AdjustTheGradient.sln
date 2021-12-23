@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdjustTheGradient", "AdjustTheGradient.csproj", "{9FC790DD-6EB5-4426-B8A2-8B130E1D78FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9FC790DD-6EB5-4426-B8A2-8B130E1D78FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FC790DD-6EB5-4426-B8A2-8B130E1D78FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FC790DD-6EB5-4426-B8A2-8B130E1D78FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FC790DD-6EB5-4426-B8A2-8B130E1D78FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

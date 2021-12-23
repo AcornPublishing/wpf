@@ -1,0 +1,41 @@
+<!-- =================================================
+      DocumentStyles.xaml (c) 2006 by Charles Petzold
+     ================================================= -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="I. Down the Rabbit-Hole">
+    <Page.Resources>
+
+        <Style TargetType="{x:Type Paragraph}" x:Key="Normal">
+            <Setter Property="TextIndent" Value="0.25in" />
+        </Style>
+
+        <Style TargetType="{x:Type Paragraph}" x:Key="ChapterHead">
+            <Setter Property="TextAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="16pt" />
+        </Style>
+
+    </Page.Resources>
+    <FlowDocumentReader>
+        <FlowDocument>
+            <Paragraph Style="{StaticResource ChapterHead}">
+                 Chapter I
+            </Paragraph>
+            <Paragraph Style="{StaticResource ChapterHead}">
+                 Down the Rabbit-Hole
+            </Paragraph>
+            <Paragraph Style="{StaticResource Normal}">
+                Alice was beginning to get very tired of sitting by
+                her sister on the bank, and of having nothing to do:
+                once or twice she had peeped into the book her sister
+                was reading, but it had no pictures or conversations
+                in it, &#x201C;and what is the use of a book,&#x201D;
+                thought Alice, &#x201C;without pictures or 
+                conversations?&#x201D;
+            </Paragraph>
+            <Paragraph Style="{StaticResource Normal}">
+                ...
+            </Paragraph>
+        </FlowDocument>
+    </FlowDocumentReader>
+</Page>

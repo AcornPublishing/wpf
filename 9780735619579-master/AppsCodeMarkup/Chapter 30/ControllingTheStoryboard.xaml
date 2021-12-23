@@ -1,0 +1,77 @@
+<!-- ===========================================================
+      ControllingTheStoryboard.xaml (c) 2006 by Charles Petzold 
+     =========================================================== -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel>
+
+        <!-- Canvas displaying animated rectangle. -->
+        <Canvas Width="350" Height="200">
+            <Rectangle Canvas.Left="150" Canvas.Top="50" 
+                       Stroke="Black" StrokeThickness="4" Fill="Aqua"
+                       Width="50" Height="150">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <RotateTransform x:Name="xform1" Angle="-90"
+                                         CenterX="0" CenterY="150" />
+                        <RotateTransform x:Name="xform2"
+                                         CenterX="50" CenterY="150" />
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+        </Canvas>
+
+        <!-- StackPanel with buttons to control animation. -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Name="btnBegin" Content="Begin" Margin="12" />
+            <Button Name="btnPause" Content="Pause" Margin="12" />
+            <Button Name="btnResume" Content="Resume" Margin="12" />
+            <Button Name="btnStop" Content="Stop" Margin="12" />
+            <Button Name="btnSkip" Content="Skip to End" Margin="12" />
+            <Button Name="btnCenter" Content="Skip to Center" Margin="12" />
+        </StackPanel>
+
+        <!-- Triggers section for button clicks. -->
+        <StackPanel.Triggers>
+            <EventTrigger SourceName="btnBegin" RoutedEvent="Button.Click">
+                <BeginStoryboard Name="storybrd">
+                    <Storyboard >
+                        <DoubleAnimation 
+                            Storyboard.TargetName="xform1"
+                            Storyboard.TargetProperty="Angle"
+                            From="-90" To="0" Duration="0:0:5" />
+
+                        <DoubleAnimation 
+                            Storyboard.TargetName="xform2"
+                            Storyboard.TargetProperty="Angle"
+                            BeginTime="0:0:5"
+                            From="0" To="90" Duration="0:0:5" />        
+
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+
+            <EventTrigger SourceName="btnPause" RoutedEvent="Button.Click">
+                <PauseStoryboard BeginStoryboardName="storybrd" />
+            </EventTrigger>
+
+            <EventTrigger SourceName="btnResume" RoutedEvent="Button.Click">
+                <ResumeStoryboard BeginStoryboardName="storybrd" />
+            </EventTrigger>
+
+            <EventTrigger SourceName="btnStop" RoutedEvent="Button.Click">
+                <StopStoryboard BeginStoryboardName="storybrd" />
+            </EventTrigger>
+
+            <EventTrigger SourceName="btnSkip" RoutedEvent="Button.Click">
+                <SkipStoryboardToFill BeginStoryboardName="storybrd" />
+            </EventTrigger>
+
+            <EventTrigger SourceName="btnCenter" RoutedEvent="Button.Click">
+                <SeekStoryboard BeginStoryboardName="storybrd"
+                                Offset="0:0:5" />
+            </EventTrigger>
+
+        </StackPanel.Triggers>
+    </StackPanel>
+</Page>

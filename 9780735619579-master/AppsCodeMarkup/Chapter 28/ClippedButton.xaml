@@ -1,0 +1,16 @@
+<!-- ================================================
+      ClippedButton.xaml (c) 2006 by Charles Petzold 
+     ================================================ -->
+<Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Button HorizontalAlignment="Center" VerticalAlignment="Center"
+            FontSize="24" Width="200" Height="100"
+            Clip="M  0 50 A 100 50 0 0 0 200 50
+                          A 100 50 0 0 0   0 50
+                  M 90 50 A  10 10 0 0 0 110 50
+                          A  10 10 0 0 0  90 50" >
+        Clipped Button
+    </Button>
+
+</Grid>

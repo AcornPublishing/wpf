@@ -1,0 +1,29 @@
+﻿<!-- =============================================================
+      ColorListBoxTemplateWindow.xaml (c) 2006 by Charles Petzold
+     ============================================================= -->
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        xmlns:nb="clr-namespace:Petzold.ListNamedBrushes" 
+        Title="Color ListBox Template"
+        Background="{Binding ElementName=lstbox, Path=SelectedValue}">
+    <Window.Resources>
+        <DataTemplate x:Key="clrlstbox" DataType="NamedBrush">
+            <StackPanel Orientation="Horizontal">
+                <Rectangle Width="16" Height="16" Margin="2"
+                           Stroke="{DynamicResource 
+                                {x:Static SystemColors.WindowTextBrushKey}}"
+                           Fill="{Binding Path=Brush}" />
+                <TextBlock VerticalAlignment="Center"
+                           Text="{Binding Path=Name}" /> 
+            </StackPanel>
+        </DataTemplate>    
+    </Window.Resources>
+
+    <ListBox Name="lstbox" ItemTemplate="{StaticResource clrlstbox}"
+             ItemsSource="{x:Static nb:NamedBrush.All}" 
+             Width="150" Height="150"
+             HorizontalAlignment="Center" VerticalAlignment="Center"
+             SelectedValuePath="Brush" />
+</Window>    
+
+ 

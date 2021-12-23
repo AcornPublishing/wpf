@@ -1,0 +1,25 @@
+<!-- =======================================================
+      ConvertedBitmapChain.xaml (c) 2006 by Charles Petzold
+     ======================================================= -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Image>
+        <Image.Source>
+            <TransformedBitmap>
+                <TransformedBitmap.Transform>
+                    <RotateTransform Angle="90" />
+                </TransformedBitmap.Transform>
+
+                <TransformedBitmap.Source>
+                    <FormatConvertedBitmap DestinationFormat="Gray2">
+                        <FormatConvertedBitmap.Source>
+                            <CroppedBitmap Source=
+                                "http://www.charlespetzold.com/PetzoldTattoo.jpg"
+                                           SourceRect="120 80 220 200" />
+                        </FormatConvertedBitmap.Source>
+                    </FormatConvertedBitmap>
+                </TransformedBitmap.Source>
+            </TransformedBitmap>
+        </Image.Source>
+    </Image>
+</Page>

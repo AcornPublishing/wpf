@@ -1,0 +1,16 @@
+<!-- ==============================================
+      TrivialPath.xaml (c) 2006 by Charles Petzold 
+     ============================================== -->
+<Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Path Stroke="Blue" StrokeThickness="3">
+        <Path.Data>
+            <PathGeometry>
+                <PathFigure StartPoint="96 96">
+                    <LineSegment Point="384 192" />
+                </PathFigure>
+            </PathGeometry>
+        </Path.Data>
+    </Path>
+</Canvas>

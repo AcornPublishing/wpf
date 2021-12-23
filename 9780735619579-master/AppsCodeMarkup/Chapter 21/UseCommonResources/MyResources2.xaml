@@ -1,0 +1,13 @@
+﻿<!-- ===============================================
+      MyResources2.xaml (c) 2006 by Charles Petzold
+     =============================================== -->
+<ResourceDictionary 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <RadialGradientBrush x:Key="brushRadial">
+        <RadialGradientBrush.GradientStops>
+            <GradientStop Color="Pink" Offset="0" />
+            <GradientStop Color="Aqua" Offset="1" />
+        </RadialGradientBrush.GradientStops>
+    </RadialGradientBrush>
+</ResourceDictionary>

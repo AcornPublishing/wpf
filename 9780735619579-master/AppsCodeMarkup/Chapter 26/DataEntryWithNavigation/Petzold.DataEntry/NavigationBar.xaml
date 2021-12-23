@@ -1,0 +1,35 @@
+﻿<!-- ================================================
+      NavigationBar.xaml (c) 2006 by Charles Petzold
+     ================================================ -->
+<ToolBar xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         x:Class="Petzold.DataEntry.NavigationBar">
+    <Button Click="FirstOnClick" ToolTip="Move first">
+        <Image Source="DataContainer_MoveFirstHS.png" Stretch="None" />
+    </Button>
+    <Button Name="btnPrev" Click="PreviousOnClick" ToolTip="Move previous">
+        <Image Source="DataContainer_MovePreviousHS.png" Stretch="None" />
+    </Button>
+    <Separator />
+    <TextBox Name="txtboxCurrent" Width="48" ToolTip="Current position"
+             GotKeyboardFocus="TextBoxOnGotFocus"
+             LostKeyboardFocus="TextBoxOnLostFocus"
+             KeyDown="TextBoxOnKeyDown" />
+    <TextBlock Text="of " VerticalAlignment="Center" />
+    <TextBlock Name="txtblkTotal" Text="0" VerticalAlignment="Center"
+               ToolTip="Total number of items"/>
+    <Separator />
+    <Button Name="btnNext" Click="NextOnClick" ToolTip="Move next">
+        <Image Source="DataContainer_MoveNextHS.png" Stretch="None" />
+    </Button>
+    <Button Click="LastOnClick" ToolTip="Move last">
+        <Image Source="DataContainer_MoveLastHS.png" Stretch="None" />
+    </Button>
+    <Separator />
+    <Button Click="AddOnClick" ToolTip="Add new">
+        <Image Source="DataContainer_NewRecordHS.png" Stretch="None" />
+    </Button>
+    <Button Name="btnDel" Click="DeleteOnClick" ToolTip="Delete">
+        <Image Source="DeleteHS.png" Stretch="None" />
+    </Button>
+</ToolBar>

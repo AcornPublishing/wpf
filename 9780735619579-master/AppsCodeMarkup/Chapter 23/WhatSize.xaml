@@ -1,0 +1,15 @@
+<!-- ===========================================
+      WhatSize.xaml (c) 2006 by Charles Petzold 
+     =========================================== -->
+<Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Name="grid">
+    <StackPanel Orientation="Horizontal"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+        <TextBlock Text="{Binding ElementName=grid, Path=ActualWidth}" />
+        <TextBlock Text=" &#x00D7; " />
+        <TextBlock Text="{Binding ElementName=grid, Path=ActualHeight}" />
+        <TextBlock Text=" device independent units" />
+    </StackPanel>
+</Grid>

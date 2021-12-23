@@ -1,0 +1,7 @@
+﻿<!-- =============================================
+      XamlButton.xaml (c) 2006 by Charles Petzold
+     ============================================= -->
+<Button xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        Foreground="LightSeaGreen" FontSize="24pt">
+    Hello, XAML!
+</Button>

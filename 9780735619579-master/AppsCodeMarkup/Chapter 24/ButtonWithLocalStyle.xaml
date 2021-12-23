@@ -1,0 +1,14 @@
+<!-- =======================================================
+      ButtonWithLocalStyle.xaml (c) 2006 by Charles Petzold
+     ======================================================= -->
+<Button xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        HorizontalAlignment="Center" VerticalAlignment="Center"
+        Foreground="Red">
+    <Button.Style>
+        <Style>
+            <Setter Property="Button.FontSize" Value="18pt" />
+            <Setter Property="Control.Foreground" Value="Blue" />
+        </Style>
+    </Button.Style>
+    Button with Local Style
+</Button>

@@ -1,0 +1,60 @@
+<!-- ===========================================
+      DashCaps.xaml (c) 2006 by Charles Petzold
+     =========================================== -->
+<Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Grid.Resources>
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="Margin" Value="24" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+
+        <Style TargetType="{x:Type Line}">
+            <Setter Property="Grid.Column" Value="1" />
+            <Setter Property="Y1" Value="30" />
+            <Setter Property="X2" Value="400" />
+            <Setter Property="Y2" Value="30" />
+            <Setter Property="StrokeThickness" Value="25" />
+            <Setter Property="Stroke" Value="Black" />
+            <Setter Property="StrokeDashArray" Value="2 2" />
+
+            <Setter Property="StrokeStartLineCap"
+                    Value="{Binding RelativeSource={RelativeSource self}, 
+                                    Path=StrokeDashCap}" />
+
+            <Setter Property="StrokeEndLineCap"
+                    Value="{Binding RelativeSource={RelativeSource self}, 
+                                    Path=StrokeDashCap}" />
+
+        </Style>
+    </Grid.Resources>
+
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="Auto" />
+    </Grid.ColumnDefinitions>
+
+    <!-- PenLineCap.Flat. -->
+    <TextBlock Grid.Row="0" Text="PenLineCap.Flat" />
+    <Line Grid.Row="0" />
+
+    <!-- PenLineCap.Square. -->
+    <TextBlock Grid.Row="1" Text="PenLineCap.Square" />
+    <Line Grid.Row="1" StrokeDashCap="Square" />
+
+    <!-- PenLineCap.Round. -->
+    <TextBlock Grid.Row="2" Text="PenLineCap.Round" />
+    <Line Grid.Row="2" StrokeDashCap="Round" />
+
+    <!-- Triangle.Triangle. -->
+    <TextBlock Grid.Row="3" Text="PenLineCap.Triangle" />
+    <Line Grid.Row="3" StrokeDashCap="Triangle" />
+</Grid>

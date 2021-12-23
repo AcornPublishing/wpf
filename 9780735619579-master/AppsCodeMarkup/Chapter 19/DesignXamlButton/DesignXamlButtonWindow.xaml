@@ -1,0 +1,30 @@
+﻿<!-- =========================================================
+      DesignXamlButtonWindow.xaml (c) 2006 by Charles Petzold
+     ========================================================= -->
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        Title="Design XAML Button"
+        SizeToContent="WidthAndHeight"
+        ResizeMode="CanMinimize">
+    <Button HorizontalAlignment="Center"
+            VerticalAlignment="Center" 
+            Margin="24">
+        <StackPanel>
+            <Polyline Stroke="Black"
+                      Points="0 10,10 0,20 10,30 0,40 10,50 0,
+                        60 10,70 0,80 10,90 0,100 10" />
+
+            <Image Margin="0,10,0,0"
+                   Source="BOOK06.ICO" 
+                   Stretch="None" />
+
+            <Label HorizontalAlignment="Center">
+                _Read Books!
+            </Label>
+
+            <Polyline Stroke="Black"
+                      Points="0 0,10 10,20 0,30 10,40 0,50 10,
+                        60 0,70 10,80 0,90 10,100 0" />
+        </StackPanel>
+    </Button>
+</Window>
+

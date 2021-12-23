@@ -1,0 +1,132 @@
+﻿<!-- ===========================================================
+      AnimatedTextGeometryDemo.xaml (c) 2006 by Charles Petzold
+     =========================================================== -->
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:src="clr-namespace:Petzold.TextGeometryDemo" 
+        x:Class="Petzold.AnimatedTextGeometryDemo.AninmatedTextGeometryDemo"
+        Title="Animated TextGeometry Demo">
+    <Window.Resources>
+        <src:TextGeometry x:Key="txtXaml" Text="XAML"
+                          FontFamily="Times New Roman Bold" FontSize="288" />
+    </Window.Resources>
+
+    <!-- Runners: Moving dotted line around text characters. -->
+    <TabControl>
+        <TabItem Header="Runners">
+            <Canvas Background="Black">
+                <Path Name="runners" 
+                      Stroke="White" StrokeThickness="5" StrokeDashCap="Round"
+                      StrokeDashArray="{Binding Source={x:Static 
+                                                DashStyles.Dot}, Path=Dashes}"
+                      Data="{Binding Source={StaticResource txtXaml}, 
+                                     Path=Geometry}" />
+            </Canvas>
+
+            <TabItem.Triggers>
+                <EventTrigger RoutedEvent="TabItem.Loaded">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard TargetName="runners" 
+                                        TargetProperty="StrokeDashOffset">
+                                <DoubleAnimation From="0" To="2" 
+                                                 Duration="0:0:1" 
+                                                 RepeatBehavior="Forever" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </TabItem.Triggers>
+        </TabItem>
+
+        <!-- Chasers: Discrete jumps of dotted character outlines. -->
+        <TabItem Header="Chasers">
+            <Canvas Background="Black">
+                <Path Name="chasers" 
+                      Stroke="White" StrokeThickness="5"
+                      StrokeDashArray="0 3" StrokeDashCap="Round"
+                      Data="{Binding Source={StaticResource txtXaml}, 
+                                     Path=Geometry}" />
+            </Canvas>
+
+            <TabItem.Triggers>
+                <EventTrigger RoutedEvent="TabItem.Loaded">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard TargetName="chasers" 
+                                        TargetProperty="StrokeDashOffset">
+                                <DoubleAnimationUsingKeyFrames 
+                                        Duration="0:0:0.5" 
+                                        RepeatBehavior="Forever">
+                                    <DiscreteDoubleKeyFrame KeyTime="33%" 
+                                                            Value="1" />
+                                    <DiscreteDoubleKeyFrame KeyTime="66%" 
+                                                            Value="2" />
+                                    <DiscreteDoubleKeyFrame KeyTime="100%" 
+                                                            Value="3" />
+                                </DoubleAnimationUsingKeyFrames>    
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </TabItem.Triggers>
+        </TabItem>
+
+        <!-- Outline of text characters traced. -->
+        <TabItem Header="Outline">
+            <Canvas Background="Black">
+                <Path Stroke="White"                
+                      Data="{Binding Source={StaticResource txtXaml}, 
+                                     Path=Geometry}" />
+            <Path Fill="Red">
+                <Path.Data>
+                    <EllipseGeometry x:Name="elips" RadiusX="3" RadiusY="3" />
+                </Path.Data>
+            </Path>
+                <Path Stroke="Red">
+                    <Path.Data>
+                        <GeometryGroup>
+                            <LineGeometry StartPoint=
+                                    "{Binding Source={StaticResource txtXaml}, 
+                                              Path=Geometry.Bounds.TopLeft}"
+                                          EndPoint=
+                                    "{Binding ElementName=elips, 
+                                              Path=Center}" />
+                            <LineGeometry StartPoint=
+                                    "{Binding Source={StaticResource txtXaml}, 
+                                              Path=Geometry.Bounds.TopRight}"
+                                          EndPoint=
+                                    "{Binding ElementName=elips, 
+                                              Path=Center}" />
+                            <LineGeometry StartPoint=
+                                    "{Binding Source={StaticResource txtXaml}, 
+                                              Path=Geometry.Bounds.BottomLeft}"
+                                          EndPoint=
+                                    "{Binding ElementName=elips, 
+                                              Path=Center}" />
+                            <LineGeometry StartPoint=
+                                    "{Binding Source={StaticResource txtXaml}, 
+                                              Path=Geometry.Bounds.BottomRight}"
+                                          EndPoint=
+                                    "{Binding ElementName=elips, 
+                                              Path=Center}" />
+                        </GeometryGroup>
+                    </Path.Data>
+                </Path>
+            </Canvas>
+            <TabItem.Triggers>
+                <EventTrigger RoutedEvent="TabItem.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard TargetName="elips" TargetProperty="Center">
+                            <PointAnimationUsingPath 
+                                PathGeometry=
+                                    "{Binding Source={StaticResource txtXaml}, 
+                                              Path=PathGeometry}"
+                                Duration="0:0:10" RepeatBehavior="Forever" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </TabItem.Triggers>
+        </TabItem>
+    </TabControl>
+</Window>

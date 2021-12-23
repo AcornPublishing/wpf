@@ -1,0 +1,33 @@
+<!-- ====================================================
+      FontSizeResources.xaml (c) 2006 by Charles Petzold 
+     ==================================================== -->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+            xmlns:s="clr-namespace:System;assembly=mscorlib">
+
+    <StackPanel.Resources>
+        <s:Double x:Key="fontsizeLarge">
+            18.7
+        </s:Double>
+        <s:Double x:Key="fontsizeSmall">
+            14.7
+        </s:Double>
+    </StackPanel.Resources>
+
+    <Button HorizontalAlignment="Center" 
+            VerticalAlignment="Center" 
+            Margin="24">
+        <Button.FontSize>
+            <StaticResource ResourceKey="fontsizeLarge" />
+        </Button.FontSize>
+        Button with large FontSize
+    </Button>
+
+    <Button HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Margin="24"
+            FontSize="{StaticResource fontsizeSmall}" >
+        Button with small FontSize
+    </Button>
+
+</StackPanel>

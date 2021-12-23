@@ -1,0 +1,44 @@
+<!-- ================================================
+      BindToTextBox.xaml (c) 2006 by Charles Petzold
+     ================================================ -->
+<Grid xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+
+    <Grid.RowDefinitions>
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+        <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+
+    <Label Grid.Row="0" Grid.Column="0" 
+           Margin="24 24 24 0"
+           Content="Source TextBox Controls" />
+    <Label Grid.Row="0" Grid.Column="1" 
+           Margin="24 24 24 0"
+           Content="Target TextBox Controls" />
+
+    <TextBox Grid.Row="1" Grid.Column="0" Name="txtbox1" 
+             Margin="24" />
+    <TextBox Grid.Row="1" Grid.Column="1" 
+             Margin="24" 
+             Text="{Binding ElementName=txtbox1, Path=Text, Mode=TwoWay}" />
+
+    <TextBox Grid.Row="2" Grid.Column="0" Name="txtbox2"  
+             Margin="24" />
+    <TextBox Grid.Row="2" Grid.Column="1" 
+             Margin="24" 
+             Text="{Binding ElementName=txtbox2, Path=Text, Mode=TwoWay}" />
+
+    <TextBox Grid.Row="3" Grid.Column="0" Name="txtbox3"  
+             Margin="24" />
+    <TextBox Grid.Row="3" Grid.Column="1" 
+             Margin="24" 
+             Text="{Binding ElementName=txtbox3, Path=Text, Mode=TwoWay}" />
+
+</Grid>

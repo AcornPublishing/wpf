@@ -1,0 +1,126 @@
+<!-- ================================================
+      NewtonsCradle.xaml (c) 2006 by Charles Petzold 
+     ================================================ -->
+<Page xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Newton's Cradle"
+      WindowTitle="Newton's Cradle by Charles Petzold">
+    <Canvas>
+        <Canvas.Resources>
+            <Style TargetType="{x:Type Path}">
+                <Setter Property="Stroke" Value="Black" />
+                <Setter Property="StrokeThickness" Value="3" />
+                <Setter Property="Fill" Value="Silver" />
+                <Setter Property="Data" 
+                        Value="M 0 0 V 300 A 25 25 0 1 1 0 350
+                                           A 25 25 0 1 1 0 300" />
+            </Style>
+        </Canvas.Resources>
+
+        <Path>
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <RotateTransform x:Name="xform1" Angle="30" />
+                    <TranslateTransform X="200" />
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+
+        <Path>
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <RotateTransform x:Name="xform2" Angle="30" />
+                    <TranslateTransform X="252" />
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+
+        <Path>
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <RotateTransform x:Name="xform3" Angle="30" />
+                    <TranslateTransform X="304" />
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+
+        <Path>
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <RotateTransform x:Name="xform4" />
+                    <TranslateTransform X="356" />
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+
+        <Path>
+            <Path.RenderTransform>
+                <TransformGroup>
+                    <RotateTransform x:Name="xform5" />
+                    <TranslateTransform X="408" />
+                </TransformGroup>
+            </Path.RenderTransform>
+        </Path>
+
+        <Canvas.Triggers>
+            <EventTrigger RoutedEvent="Page.Loaded">
+                <BeginStoryboard>
+                    <Storyboard TargetProperty="Angle" RepeatBehavior="Forever">
+                        <DoubleAnimationUsingKeyFrames 
+                                Storyboard.TargetName="xform1">
+                            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="30"/>
+                            <SplineDoubleKeyFrame KeyTime="0:0:1" Value="0" 
+                                                  KeySpline="0.25 0, 0.6 0.2" />
+                            <DiscreteDoubleKeyFrame KeyTime="0:0:3" Value="0" />
+                            <SplineDoubleKeyFrame KeyTime="0:0:4" Value="30"
+                                                  KeySpline="0.75 1, 0.4 0.8" />
+                        </DoubleAnimationUsingKeyFrames>
+    
+                        <DoubleAnimationUsingKeyFrames 
+                                Storyboard.TargetName="xform2">
+                            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="30"/>
+                            <SplineDoubleKeyFrame KeyTime="0:0:1" Value="0" 
+                                                  KeySpline="0.25 0, 0.6 0.2" />
+                            <DiscreteDoubleKeyFrame KeyTime="0:0:3" Value="0" />
+                            <SplineDoubleKeyFrame KeyTime="0:0:4" Value="30"
+                                                  KeySpline="0.75 1, 0.4 0.8" />
+                        </DoubleAnimationUsingKeyFrames>
+
+                        <DoubleAnimationUsingKeyFrames 
+                                Storyboard.TargetName="xform3">
+                            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="30"/>
+                            <SplineDoubleKeyFrame KeyTime="0:0:1" Value="0" 
+                                                  KeySpline="0.25 0, 0.6 0.2" />
+                            <SplineDoubleKeyFrame KeyTime="0:0:2" Value="-30"
+                                                  KeySpline="0.75 1, 0.4 0.8" />
+                            <SplineDoubleKeyFrame KeyTime="0:0:3" Value="0" 
+                                                  KeySpline="0.25 0, 0.6 0.2" />
+                            <SplineDoubleKeyFrame KeyTime="0:0:4" Value="30" 
+                                                  KeySpline="0.75 1, 0.4 0.8" />
+                        </DoubleAnimationUsingKeyFrames>
+
+                        <DoubleAnimationUsingKeyFrames 
+                                Storyboard.TargetName="xform4">
+                            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="0" />
+                            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="0" />
+                            <SplineDoubleKeyFrame KeyTime="0:0:2" Value="-30" 
+                                                  KeySpline="0.75 1, 0.4 0.8" />
+                            <SplineDoubleKeyFrame KeyTime="0:0:3" Value="0" 
+                                                  KeySpline="0.25 0, 0.6 0.2" />
+                        </DoubleAnimationUsingKeyFrames>
+
+                        <DoubleAnimationUsingKeyFrames 
+                                Storyboard.TargetName="xform5">
+                            <DiscreteDoubleKeyFrame KeyTime="0:0:0" Value="0" />
+                            <DiscreteDoubleKeyFrame KeyTime="0:0:1" Value="0" />
+                            <SplineDoubleKeyFrame KeyTime="0:0:2" Value="-30" 
+                                                  KeySpline="0.75 1, 0.4 0.8" />
+                            <SplineDoubleKeyFrame KeyTime="0:0:3" Value="0" 
+                                                  KeySpline="0.25 0, 0.6 0.2" />
+                        </DoubleAnimationUsingKeyFrames>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Canvas.Triggers>
+    </Canvas>
+</Page>

@@ -1,0 +1,27 @@
+<!-- ============================================================
+      StyleWithMultipleElements.xaml (c) 2006 by Charles Petzold
+     ============================================================ -->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel.Resources>
+        <Style x:Key="normal">
+            <Setter Property="Control.FontSize" Value="24" />
+            <Setter Property="Control.Foreground" Value="Blue" />
+            <Setter Property="Control.HorizontalAlignment" Value="Center" />
+            <Setter Property="Control.Margin" Value="24" />
+            <Setter Property="Control.Padding" Value="20, 10, 20, 10" />
+        </Style>
+    </StackPanel.Resources>
+
+    <Button Style="{StaticResource normal}">
+        Button on top of the stack
+    </Button>
+
+    <TextBlock Style="{StaticResource normal}">
+        TextBlock in the middle of the stack
+    </TextBlock>
+
+    <Button Style="{StaticResource normal}">
+        Button on the bottom of the stack
+    </Button>
+</StackPanel>

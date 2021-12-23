@@ -1,0 +1,81 @@
+﻿<!-- =====================================================
+      BezierExperimenter.xaml (c) 2006 by Charles Petzold
+     ===================================================== -->
+<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Petzold.BezierExperimenter.BezierExperimenter"
+        Title="Bezier Experimenter">
+    <Canvas Name="canvas">
+
+        <!-- Draw the four points defining the curve. -->
+        
+        <Path Fill="{DynamicResource 
+                                {x:Static SystemColors.WindowTextBrushKey}}">
+            <Path.Data>
+                <GeometryGroup>
+                    <EllipseGeometry x:Name="ptStart" RadiusX="2" RadiusY="2" />
+                    <EllipseGeometry x:Name="ptCtrl1" RadiusX="2" RadiusY="2" />
+                    <EllipseGeometry x:Name="ptCtrl2" RadiusX="2" RadiusY="2" />
+                    <EllipseGeometry x:Name="ptEnd" RadiusX="2" RadiusY="2" />
+                </GeometryGroup>
+            </Path.Data>
+        </Path>
+
+        <!-- Draw the curve itself -->
+        
+        <Path Stroke="{DynamicResource 
+                                {x:Static SystemColors.WindowTextBrushKey}}">
+            <Path.Data>
+                <PathGeometry>
+                    <PathGeometry.Figures>
+                        <PathFigure StartPoint="{Binding ElementName=ptStart, 
+                                                         Path=Center}">
+                            <BezierSegment Point1="{Binding ElementName=ptCtrl1, 
+                                                            Path=Center}"
+                                           Point2="{Binding ElementName=ptCtrl2, 
+                                                            Path=Center}"
+                                           Point3="{Binding ElementName=ptEnd, 
+                                                            Path=Center}" />
+                        </PathFigure>                        
+                    </PathGeometry.Figures>                    
+                </PathGeometry>                
+            </Path.Data>
+        </Path>
+
+        <!-- Draw gray lines connecting end points and control points. -->
+        
+        <Path Stroke="{DynamicResource 
+                            {x:Static SystemColors.GrayTextBrushKey}}">
+            <Path.Data>
+                <GeometryGroup>
+                    <LineGeometry StartPoint="{Binding ElementName=ptStart, 
+                                                       Path=Center}"
+                                  EndPoint="{Binding ElementName=ptCtrl1, 
+                                                     Path=Center}" />
+                    <LineGeometry StartPoint="{Binding ElementName=ptEnd, 
+                                                       Path=Center}"
+                                  EndPoint="{Binding ElementName=ptCtrl2, 
+                                                     Path=Center}" />
+                </GeometryGroup>                
+            </Path.Data>
+        </Path>
+
+        <!-- Display some labels with the actual points. -->
+
+        <Label Canvas.Left="{Binding ElementName=ptStart, Path=Center.X}"
+               Canvas.Top="{Binding ElementName=ptStart, Path=Center.Y}"
+               Content="{Binding ElementName=ptStart, Path=Center}" />
+
+        <Label Canvas.Left="{Binding ElementName=ptCtrl1, Path=Center.X}"
+               Canvas.Top="{Binding ElementName=ptCtrl1, Path=Center.Y}"
+               Content="{Binding ElementName=ptCtrl1, Path=Center}" />
+
+        <Label Canvas.Left="{Binding ElementName=ptCtrl2, Path=Center.X}"
+               Canvas.Top="{Binding ElementName=ptCtrl2, Path=Center.Y}"
+               Content="{Binding ElementName=ptCtrl2, Path=Center}" />
+
+        <Label Canvas.Left="{Binding ElementName=ptEnd, Path=Center.X}"
+               Canvas.Top="{Binding ElementName=ptEnd, Path=Center.Y}"
+               Content="{Binding ElementName=ptEnd, Path=Center}" />
+    </Canvas>
+</Window>

@@ -1,0 +1,36 @@
+<!-- ====================================================
+      StyleWithTriggers.xaml (c) 2006 by Charles Petzold
+     ==================================================== -->
+<StackPanel xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+            xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <StackPanel.Resources>
+        <Style x:Key="normal">
+            <Setter Property="Control.FontSize" Value="24" />
+            <Setter Property="Control.HorizontalAlignment" Value="Center" />
+            <Setter Property="Control.Margin" Value="24" />
+
+            <Style.Triggers>
+                <Trigger Property="Control.IsMouseOver" Value="true">
+                    <Setter Property="Control.FontStyle" Value="Italic" />
+                    <Setter Property="Control.Foreground" Value="Blue" />
+                </Trigger>
+
+                <Trigger Property="Button.IsPressed" Value="true">
+                    <Setter Property="Control.Foreground" Value="Red" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </StackPanel.Resources>
+
+    <Button Style="{StaticResource normal}">
+        Button Number 1
+    </Button>
+
+    <Button Style="{StaticResource normal}">
+        Button Number 2
+    </Button>
+
+    <Button Style="{StaticResource normal}">
+        Button Number 3
+    </Button>
+</StackPanel>

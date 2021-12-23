@@ -1,0 +1,13 @@
+<!-- ========================================================
+      RectangleGeometryDemo.xaml (c) 2006 by Charles Petzold 
+     ======================================================== -->
+<Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Path Fill="Blue" Stroke="Red" StrokeThickness="3">
+        <Path.Data>
+            <RectangleGeometry Rect="96 48 288 192"
+                               RadiusX="24" RadiusY="24" />
+        </Path.Data>
+    </Path>
+</Canvas>

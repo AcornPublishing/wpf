@@ -1,0 +1,15 @@
+<!-- =====================================================
+      RadialGradientStar.xaml (c) 2006 by Charles Petzold
+     ===================================================== -->
+<Polygon xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+         Points="144 48, 200 222, 53 114, 235 114, 88 222"
+         Stroke="Blue"
+         StrokeThickness="5">
+    <Polygon.Fill>
+        <RadialGradientBrush>
+            <GradientStop Offset="0" Color="Blue" />
+            <GradientStop Offset="1" Color="Red" />
+        </RadialGradientBrush>
+    </Polygon.Fill>
+</Polygon>

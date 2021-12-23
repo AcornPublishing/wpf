@@ -1,0 +1,75 @@
+<!-- =====================================================
+      InfinityAnimation1.xaml (c) 2006 by Charles Petzold 
+     ===================================================== -->
+<Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Path Canvas.Left="150" Canvas.Top="150" StrokeThickness="25">
+        <Path.Data>
+            <PathGeometry>
+                <PathGeometry.Figures>
+                    <PathFigure StartPoint="0 -100">
+                        <PolyBezierSegment 
+                            Points=" -55 -100, -100  -55, -100    0,
+                                    -100   55,  -55  100,    0  100,
+                                      55  100,  100   50,  150    0,
+                                     200  -50,  245 -100,  300 -100,
+                                     355 -100,  400  -55,  400    0,
+                                     400   55,  355  100,  300  100,
+                                     245  100,  200   50,  150    0,
+                                     100  -50,   55 -100,    0 -100" />
+                    </PathFigure>
+                </PathGeometry.Figures>
+            </PathGeometry>
+        </Path.Data>
+        <Path.Stroke>
+            <LinearGradientBrush x:Name="brush">
+                <LinearGradientBrush.GradientStops>
+                    <GradientStop Color="Red" />
+                    <GradientStop Color="Orange" />
+                    <GradientStop Color="Yellow" />
+                    <GradientStop Color="Green" />
+                    <GradientStop Color="Blue" />
+                    <GradientStop Color="Indigo" />
+                    <GradientStop Color="Violet" />
+                </LinearGradientBrush.GradientStops>
+            </LinearGradientBrush>
+        </Path.Stroke>
+        <Path.Triggers>
+            <EventTrigger RoutedEvent="Path.Loaded">
+                <BeginStoryboard>
+                    <Storyboard TargetName="brush" SpeedRatio="3">
+                        <DoubleAnimation
+                            Storyboard.TargetProperty="GradientStops[0].Offset"
+                            From="0" To="1" Duration="0:0:7"
+                            RepeatBehavior="Forever" />
+                        <DoubleAnimation
+                            Storyboard.TargetProperty="GradientStops[1].Offset"
+                            From="0" To="1"  Duration="0:0:7" 
+                            BeginTime="0:0:1" RepeatBehavior="Forever" />
+                        <DoubleAnimation
+                            Storyboard.TargetProperty="GradientStops[2].Offset"
+                            From="0" To="1" Duration="0:0:7"
+                            BeginTime="0:0:2" RepeatBehavior="Forever" />
+                        <DoubleAnimation
+                            Storyboard.TargetProperty="GradientStops[3].Offset"
+                            From="0" To="1" Duration="0:0:7"
+                            BeginTime="0:0:3" RepeatBehavior="Forever" />
+                        <DoubleAnimation
+                            Storyboard.TargetProperty="GradientStops[4].Offset"
+                            From="0" To="1" Duration="0:0:7"
+                            BeginTime="0:0:4" RepeatBehavior="Forever" />
+                        <DoubleAnimation
+                            Storyboard.TargetProperty="GradientStops[5].Offset"
+                            From="0" To="1" Duration="0:0:7"
+                            BeginTime="0:0:5" RepeatBehavior="Forever" />
+                        <DoubleAnimation
+                            Storyboard.TargetProperty="GradientStops[6].Offset"
+                            From="0" To="1" Duration="0:0:7"
+                            BeginTime="0:0:6" RepeatBehavior="Forever" />
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+        </Path.Triggers>
+    </Path>
+</Canvas>
